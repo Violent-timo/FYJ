@@ -1,0 +1,381 @@
+@charset "utf-8";
+$color:#E4393C;
+$bgcolor:#e93854;
+
+@mixin borderStyle( $direction,$size:1px, $type:solid, $color:#F4F4F4) {
+   
+    @if $direction!= "" {
+        border-#{$direction}: $size $type $color;
+    } @else {
+        border: $size $type $color;
+    }
+}    
+ 
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  } 
+
+//设置版心
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+//头部
+header{
+    margin-top: 5px;
+    border-bottom: 2px solid #F5F5F5;
+    background-color: white;
+    width: 100%;
+    padding-bottom: 12px;
+    .container{
+        height: 80px;
+        img{
+            width: 240px;
+            height: 68px;
+            margin-top: 12px;
+            float: left;
+
+        }
+        span{
+            display: block;
+            width: 110px;
+            height: 40px;
+            float: left;
+            margin-top: 40px;
+            font-size: 24px;
+            line-height: 30px;
+            color: #333;
+        }
+    }
+}
+//提示
+#tips{
+    width: 100%;
+    background-color: #fff8f0;
+    padding: 10px 0px;
+
+    .container{
+        text-align: center;
+        div{
+            height: 19px;
+            line-height: 19px;
+        }
+        p{
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            vertical-align: middle;
+        }
+        i{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url(../imgs/login_pic.png) no-repeat -150px -250px;
+            
+        }
+    }
+}
+
+//登录
+#banner-wrap{
+    height: 600px;
+}
+.banner{
+    background-color: $bgcolor;
+    .container{
+        height: 480px;
+        background: url(../imgs/login_img.jpg) no-repeat 0 0;
+    }
+}
+//登录框
+.login-wrap{
+    position: relative;
+    z-index: 4;
+    background-color: #FFF;
+    width: 346px;
+    padding: 0;
+    margin-top: 10px;
+    float: right;
+    overflow: hidden;
+        
+}
+//切换登录
+.loginModule{
+    overflow: visible;
+    position: relative;
+    .togbtn{
+        // border-bottom: solid 1px #F4F4F4;
+        @include borderStyle(bottom);
+        @extend %clearfix;
+    }
+    .togbtn>li{
+        float: left;
+        width: 50%;
+        height: 54px;
+        a{
+            display: block;
+            height: 18px;
+            text-align: center;
+            margin: 18px 0;
+            
+            @include borderStyle(right);
+            font-family: "microsoft yahei";
+            font-size: 18px;
+            color: #666;
+            line-height: 18px;
+        }
+        a:hover{
+            color: $color;
+        }
+        .active{
+            color: $color;
+            font-weight: 700;
+        }
+    }
+    //脚部
+    .foot{
+        padding: 0 20px;
+        line-height: 50px;
+        @include borderStyle(top);
+        .left{
+            float: left;
+        }
+        .left>a{
+            position: relative;
+            display: inline-block;
+            padding-left: 24px;
+            color: #666;
+            b{
+                position: absolute;
+                left: 0;
+                top: 16px;
+                display: block;
+                float: left;
+                margin: 0 auto;
+                width: 18px;
+                height: 18px;
+                background: url(../imgs/login_pic.png) no-repeat;
+                background-position: -120px -250px;
+            }
+        }
+        .left>span{
+            color: #ccc;
+            padding: 0 10px;
+        }
+        .right>a{
+            float: right;
+            display: block;
+            color: #b61d1d;
+            font-size: 14px;
+        }
+        .right b{
+            display: inline-block;
+            overflow: hidden;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            top: -1px;
+            vertical-align: middle;
+            margin-right: 5px;
+            background: url(../imgs/login_pic.png) no-repeat -180px -250px;
+        }
+    }
+}
+//用户名登录表单
+.loginform{
+    padding: 20px;
+    display: block;
+    .user,.password{
+        position: relative;
+        margin-bottom: 22px;
+        z-index: 1;
+        width: 304px;
+        height: 38px;
+        @include borderStyle('',1px,solid,#bdbdbd);
+        // border: 1px solid #bdbdbd;
+        label{
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url(../imgs/login_pic.png) no-repeat;
+            background-position: 0 -110px;
+        }
+        input{
+            overflow: hidden;
+            float: none;
+            width: 254px;
+            height: 18px;
+            min-height: 18px;
+            padding: 10px 0 10px 50px;
+            border: 0;
+            font-family: '\5b8b\4f53';
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+    .password>label{
+        background-position: -48px -110px;
+    }
+    .safe{
+        margin-bottom: 12px;
+        position: relative;
+        input{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        .foget-ps{
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 0;
+        }
+    }
+    .loginBtn{
+        margin-bottom: 22px;
+        width: 306px;
+        height: 40px;
+        border-radius: 20px;
+        @include borderStyle('',1px,solid,rgba(22,189,83,1));
+        // border: 1px solid rgba(22,189,83,1);
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: 400;
+        color: rgba(108,108,108,1);
+        cursor: pointer;
+        i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../imgs/slider-click.png);
+            background-size: 100%;
+            position: absolute;
+            top: 10px;
+            left: 25px;
+        }
+        span{
+            font-size: 14px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 400;
+            color: rgba(108,108,108,1);
+        }
+    }
+
+}
+//手机号登录表单
+.mobileform{
+    
+    padding: 20px;
+    display: none;
+    .phone,.code{
+        width: 304px;
+        height: 38px;
+        margin-bottom: 22px;
+        position: relative;
+        @include borderStyle('',1px,solid,#bdbdbd);
+    }
+    .phone,.code{
+        
+        // border: 1px solid #bdbdbd;
+        
+        label{
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            width: 38px;
+            height: 38px;
+            border-right: 1px solid #bdbdbd;
+            background: url(../imgs/login_pic.png) no-repeat;
+            background-position: -144px -110px;
+        }
+        input{
+            overflow: hidden;
+            float: none;
+            width: 254px;
+            height: 18px;
+            min-height: 18px;
+            padding: 10px 0 10px 50px;
+            border: 0;
+            font-family: '\5b8b\4f53';
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+    .getcode{
+        height: 66px;
+        position: relative;
+        >div{
+            width: 306px;
+            height: 40px;
+            border-radius: 20px;
+            @include borderStyle('',1px ,solid,rgba(22,189,83,1) );
+            // border: 1px solid rgba(22,189,83,1);
+            position: relative;
+            font-size: 14px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 400;
+            color: rgba(108,108,108,1);
+            cursor: pointer;
+        }
+        i{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../imgs/slider-click.png);
+            background-size: 100%;
+            position: absolute;
+            top: 10px;
+            left: 25px; 
+        }
+        span{
+            font-size: 14px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 400;
+            color: rgba(108,108,108,1);
+        }
+    }
+    .code{
+        label{
+            background-position: -192px -110px;
+        }
+    }
+    .mobileLoginBtn{
+        position: relative;
+        width: 100%;
+        height: 32px;
+        margin: 0 auto;
+        @include borderStyle('',1px,solid , #cb2a2d);
+        margin-bottom: 10px;
+        button{
+            display: block;
+            width: 100%;
+            height: 32px;
+            text-align: center;
+            padding: 0;
+            @include borderStyle('',1px ,solid , #e85356);
+            background: $color;
+            font-family: 'Microsoft YaHei';
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+}

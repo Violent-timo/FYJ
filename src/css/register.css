@@ -1,0 +1,402 @@
+@charset "UTF-8";
+header .container {
+  *zoom: 1;
+}
+header .container:before, header .container:after {
+  content: " ";
+  display: table;
+}
+header .container:after {
+  clear: both;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 5px;
+  height: 90px;
+  border-bottom: solid 2px #F5F5F5;
+}
+header h1 {
+  width: 350px;
+  text-indent: -999px;
+  margin-top: 10px;
+  position: relative;
+  width: 350px;
+  float: left;
+}
+header img {
+  width: 240px;
+  height: 68px;
+  display: block;
+  float: left;
+}
+header .login {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 24px;
+  float: right;
+  height: 24px;
+  margin-top: 50px;
+}
+header .login a {
+  font-weight: 600;
+  font-family: 微软雅黑;
+  color: #06C;
+}
+
+#bg {
+  background: #FAFAFA url(../imgs/register_bg.png) repeat 50% 50%;
+  width: 100%;
+  height: 680px;
+  overflow: hidden;
+}
+#bg .wrap {
+  background: rgba(0, 0, 0, 0.15);
+  width: 860px;
+  height: 560px;
+  padding: 10px;
+  margin: 60px auto;
+}
+#bg .register {
+  background-color: #FFF;
+  display: block;
+  width: 820px;
+  height: 520px;
+  padding: 19px;
+  border: solid 1px #CCC;
+  overflow: hidden;
+}
+#bg .left {
+  width: 600px;
+  height: 520px;
+  float: left;
+}
+#bg .registerModule {
+  width: 580px;
+}
+#bg .tabs-nav {
+  font-size: 0;
+  word-spacing: -1em;
+  border-bottom: solid 1px #E6E6E6;
+}
+#bg .tabs-nav li {
+  vertical-align: bottom;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: center;
+  display: inline-block;
+  *display: inline;
+  width: 50%;
+  height: 40px;
+  margin-bottom: -1px;
+  *zoom: 1;
+}
+#bg .tabs-nav a {
+  font-size: 18px;
+  color: #999;
+  line-height: 24px;
+  padding-bottom: 13px;
+  position: relative;
+  z-index: 1;
+  font-family: "微软雅黑";
+}
+#bg .tabs-nav a i {
+  font-size: 0;
+  line-height: 0;
+  border-color: #FF500B transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  border-width: 7px;
+  display: none;
+  width: 0;
+  height: 0;
+  margin-left: -4px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -17px;
+}
+#bg .tabs-container {
+  position: relative;
+  z-index: 1;
+}
+#bg .tabs-content {
+  padding: 50px 80px 0 100px;
+}
+#bg .firstForm {
+  display: block;
+}
+#bg .firstForm .error {
+  display: none;
+  color: #000;
+  line-height: 24px;
+  background: #FFF5D9 no-repeat 0 0;
+  text-align: left;
+  white-space: nowrap;
+  height: 24px;
+  padding: 8px 12px 8px 24px;
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 300px;
+  font-size: 12px;
+}
+#bg .firstForm .error i {
+  font-size: 24px;
+  margin-right: 12px;
+  color: #FF500B;
+  vertical-align: middle;
+  display: inline-block;
+}
+#bg .firstForm > dl:first-child {
+  background-color: #FFF;
+  width: 398px;
+  height: 52px;
+  margin-top: -1px;
+  border: solid 1px #E6E6E6;
+  position: relative;
+  z-index: 1;
+}
+#bg .firstForm > dl:first-child dt {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  width: 88px;
+  padding: 16px 0 16px 20px;
+  float: left;
+}
+#bg .firstForm > dl:first-child dd {
+  height: 28px;
+  float: left;
+  padding: 12px 0;
+}
+#bg .firstForm > dl:first-child dd input {
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  line-height: 28px;
+  width: 290px;
+  height: 28px;
+  padding: 0;
+  border: none 0;
+}
+#bg .firstForm > dl:first-child .inputerror {
+  color: #FF875A !important;
+}
+#bg .firstForm .firstBtn {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+}
+#bg .firstForm .regist-slider {
+  margin: auto;
+  width: 306px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #16bd53;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 400;
+  color: #6c6c6c;
+  cursor: pointer;
+}
+#bg .firstForm .regist-slider i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../imgs/slider-click.png);
+  background-size: 100%;
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+#bg .firstForm .regist-slider span {
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 400;
+  color: #6c6c6c;
+}
+#bg .firstForm .clause {
+  font-size: 14px;
+  color: #666;
+  line-height: 30px;
+  width: 400px;
+  height: 30px;
+  margin-top: 15px;
+  border: none 0;
+  position: relative;
+}
+#bg .firstForm .clause .error {
+  left: 190px;
+  top: -5px;
+}
+#bg .firstForm .clause input {
+  vertical-align: middle;
+  margin-right: 8px;
+  background-color: #fff;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+}
+#bg .firstForm .clause a {
+  font-size: 14px;
+  line-height: 30px;
+  color: #06C;
+}
+
+.secondForm {
+  display: none;
+}
+.secondForm dl {
+  background-color: #FFF;
+  width: 398px;
+  height: 52px;
+  margin-top: -1px;
+  border: solid 1px #E6E6E6;
+  position: relative;
+  z-index: 1;
+}
+.secondForm dl dt {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  width: 88px;
+  padding: 16px 0 16px 20px;
+  float: left;
+}
+.secondForm dl dd {
+  height: 28px;
+  float: left;
+  padding: 12px 0;
+}
+.secondForm dl dd input {
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  line-height: 28px;
+  width: 290px;
+  height: 28px;
+  padding: 0;
+  border: none 0;
+}
+.secondForm dl .error {
+  display: none;
+  color: #000;
+  line-height: 24px;
+  background: #FFF5D9 no-repeat 0 0;
+  text-align: left;
+  white-space: nowrap;
+  height: 24px;
+  padding: 8px 12px 8px 24px;
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 300px;
+}
+.secondForm .mobilemsg {
+  font-size: 14px;
+  color: #666;
+  line-height: 30px;
+  width: 400px;
+  height: 30px;
+  margin-top: 15px;
+  border: none 0;
+  background-color: #FFF;
+}
+.secondForm .encode {
+  margin-top: 10px !important;
+}
+.secondForm .tiptext {
+  line-height: 20px;
+  color: #999;
+  margin: 15px 0;
+}
+.secondForm .tiptext .getagain {
+  display: none;
+}
+.secondForm .tiptext a {
+  line-height: 22px;
+  color: #FFF;
+  background-color: #21b384;
+  vertical-align: middle;
+  display: inline-block;
+  height: 22px;
+  padding: 0 8px;
+  margin: 0 4px;
+  border-radius: 2px;
+}
+.secondForm .tiptext .count-down {
+  padding-left: 5px;
+  text-align: center;
+}
+.secondForm .tiptext .count-down strong {
+  color: #DD5A43 !important;
+  font-weight: bold;
+}
+.secondForm .submitBtn {
+  margin-top: 15px;
+}
+.secondForm .submitBtn button {
+  font-family: "microsoft yahei";
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFF;
+  background-color: #FF500B;
+  width: 398px;
+  height: 42px;
+  border: solid 1px #e4393c;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#bg .right {
+  width: 200px;
+  height: 500px;
+  float: right;
+  padding: 20px 0 0 19px;
+  border-left: solid 1px #E6E6E6;
+}
+#bg .right h4 {
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 20px;
+  color: #333;
+  font-style: normal;
+  font-weight: normal;
+}
+#bg .right li {
+  color: #999;
+  line-height: 24px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+}
+#bg .right li i {
+  background: url(../imgs/login_pic.png) no-repeat;
+  vertical-align: middle;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+#bg .right .ico1 i {
+  background-position: 0 -76px;
+}
+#bg .right .ico2 i {
+  background-position: -30px -76px;
+}
+#bg .right .ico3 i {
+  background-position: -60px -76px;
+}
+#bg .right .ico4 i {
+  background-position: -120px -76px;
+}
+#bg .right .ico5 i {
+  background-position: -150px -76px;
+}
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="./imgs/tit.png" alt="">
+            <span>欢迎登录</span>
+        </div>
+    </header>
+    <div id="tips">
+        <div class="container">
+            <div>
+                 <i></i>
+                 <p>为确保您账户的安全及正常使用，依《网络安全法》相关要求，会员账户需绑定手机。如您还未绑定，请尽快完成，感谢您的理解及支持！</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="banner-wrap">
+        <div class="banner">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="loginModule">
+                        <ul class="togbtn">
+                            <li ><a href="javascript:;"class="active">用户登录</a></li>
+                            <li><a href="javascript:;">手机动态码登录</a></li>
+                        </ul>
+                        <form action="" class="loginform">
+                            <div class="user">
+                                <label for=""></label>
+                                <input type="text" placeholder="手机号/会员名/邮箱">
+                            </div>
+                            <div class="password">
+                                <label for=""></label>
+                                <input type="password" placeholder="输入账户密码">
+                            </div>
+                            <div class="safe">
+                                <span class="auto">
+                                    <input type="checkbox">七天自动登录
+                                </span>
+                                <span class="foget-ps">
+                                    <a href="javascript:;">忘记密码</a>
+                                </span>
+                            </div>
+                            <div class="loginBtn">
+                                <i></i>
+                                <span>登录</span>
+                            </div>
+                        </form> 
+                        <form action="" class="mobileform">
+                            <div class="phone">
+                                <label for="mobile" title="手机号"></label>
+                                <input type="text" placeholder="可填写已注册的手机号接收短信">
+                            </div>
+                            <div class="getcode">
+                                <div class="getcodebtn">
+                                    <i></i>
+                                    <span>点击发送验证码</span>
+                                </div>
+                            </div>
+                            <div class="code">
+                                <label for=""></label>
+                                <input type="text" placeholder="输入6位短信动态码">
+                            </div>
+                            <div class="mobileLoginBtn">
+                                <button>登录</button>
+                            </div>
+                        </form>
+                        <ul class="foot">
+                            <li class="left">
+                                <a href="javascript:;">微信
+                                    <b></b>
+                                </a>
+                                <span>|</span>
+                            </li>
+                            <li class="right">
+                                <a href="javascript:;">
+                                    <b></b>
+                                    立即注册</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script/jquery-3.4.1.min.js"></script>
+    <script src="./script/login.js"></script>
+</body>
+</html>
