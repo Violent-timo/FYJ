@@ -4,8 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    这是首页
+    <header>
+        <div class="container">
+            <div class="left">
+                <a href="javascript:;">
+                    <span></span>浙江省<i></i>
+                </a>
+            </div>
+            <div class="right">
+                <dl class="login">
+                    <dt>
+                        <a href="login.html">您好, 请登录</a>
+                        <a href="register.html">免费注册</a>
+                    </dt>
+                </dl>
+                <dl class="myorder">
+                    <dt class="title">
+                        <a href="javascript:;">我的订单</a>
+                        <span class="arrow"></span>
+                    </dt>
+                    <dd class="con">
+                        <ul>
+                            <li><a href="javasctipt:;">待支付</a></li>
+                            <li><a href="javasctipt:;">待确认</a></li>
+                            <li><a href="javasctipt:;">待评价</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="mymall">
+                    <dt class="title">
+                        <a href="javascript:;">我的商城</a>
+                        <span class="arrow"></span>
+                    </dt>
+                    <dd class="con">
+                        <ul>
+                            <li><a href="javascript:;">站内消息</a></li>
+                            <li><a href="javascript:;">资讯回复</a></li>
+                            <li><a href="javascript:;">我的收藏</a></li>
+                            <li><a href="javascript:;">我的足迹</a></li>
+                            <li><a href="javascript:;">我的积分</a></li>
+                            <li><a href="javascript:;">我的优惠券</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="call-center">
+                    <dt class="title">
+                        <a href="javascript:;">客户服务</a>
+                        <span class="arrow"></span>
+                    </dt>
+                    <dd class="con">
+                        <ul>
+                            <li><a href="javascript:;">购物指南</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                            <li><a href="javascript:;">商家服务</a></li>
+                           
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="mobile-mall">
+                    <dt class="title">
+                        <span class="icon"></span>
+                        手机商城
+                        <span class="arrow"></span>
+                    </dt>
+                    <dd class="con">
+                        <span class="QRcode">
+                            <img src="https://pic.cnrmall.com/qr/app/url.gif" alt="">
+                            <p>
+                                扫描二维码
+                                <br>
+                                更多优惠下载小小品APP
+                            </p>
+                        </span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </header>
+
+    <div id="search">
+        <div class="container">
+            <h1>央广购物
+                <a href="index.html">
+                    <img src="https://pic4.cnrmall.com/image/2c/6c/2c6ce4ec89967ee42ef77fb0b524fc0c.png" alt="">
+                </a>
+            </h1>
+            <div class="search-wrap">
+                <div class="search-bar">
+                    <form action="">
+                        <span></span>
+                        <input type="text" name='keyword' placeholder="防晒">
+                        <input type="submit" value="搜索">
+                    </form>
+                </div>
+                <div class="keyword">
+                    热门关键词: 
+                    <ul>
+                        <li><a href="javascript:;">冰丝席</a></li>
+                        <li><a href="javascript:;">鲜花饼</a></li>
+                        <li><a href="javascript:;">垃圾袋</a></li>
+                        <li><a href="javascript:;">牛排</a></li>
+                        <li><a href="javascript:;">红酒</a></li>
+                        <li><a href="javascript:;">老花镜</a></li>
+                        <li><a href="javascript:;">水果</a></li>
+                        <li><a href="javascript:;">枣</a></li>
+                        <li><a href="javascript:;">大米</a></li>
+                        <li><a href="javascript:;">红花籽油</a></li>
+                        <li><a href="javascript:;">蜂蜜</a></li>
+                        <li><a href="javascript:;">红肠</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mycart">
+                <div class="title">
+                    <i class="icon"></i>
+                    <i class="count">1</i>
+                    <a href="javascript:;">我的购物车</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script/jquery-3.4.1.min.js"></script>
+    <script src="./script/index.js"></script>
 </body>
 </html>
