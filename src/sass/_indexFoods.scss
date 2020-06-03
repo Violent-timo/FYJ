@@ -1,0 +1,161 @@
+#foods{
+    width: 100%;
+    .container{
+        background-color: $killcolor;
+        @extend %clearfix;
+    }
+    .title{
+        height: 58px;
+        width: 100%;
+        line-height: 58px;
+        background-color: #edba21;
+        background-image: linear-gradient(90deg, #edba21, #e19631);
+        padding-left: 25px;
+        box-sizing: border-box;
+        h3{
+            font-size: 22px;
+            font-weight: 400;
+            color: $killcolor;
+            display: inline;
+        }
+    }
+    .food-wrap{
+        padding: 10px;
+        @extend %clearfix;
+        .left{
+            float: left;
+            width: 580px;
+            position: relative;
+            height: 400px;
+            .sometit{
+                color: $sometitle;
+            }
+        }
+        .right{
+            float: left;
+            width: 579px;
+            margin-left: 15px;
+            padding-left: 15px;
+            position: relative;
+            overflow: hidden;
+            border-left: 1px solid #E6E6E6;
+            .some{
+                width: 187px;
+            }
+        }
+        .cover{
+            &:hover{
+                img{
+                    transform: translateX(-10px);
+                }
+            }
+            float: left;
+            margin-right: 10px;
+            width: 186px;
+            height: 260px;
+            overflow: hidden;
+            background-color: #F7F7F7;
+            a{
+                display: block;
+            }
+            img{
+                transition: transform 0.2s ease 0s
+            }
+        }
+        .some{
+            overflow: hidden;
+            position: relative;
+            float: left;
+            width: 382px;
+            height: 260px;
+            a{
+                display: block;
+                float: left;
+                position: relative;
+                width: 191px;
+                height: 130px;
+            }
+            img{
+                &:hover{
+                    transform: translateX(-5px);
+                }
+                
+               
+                display: block;
+                overflow: hidden;
+                position: absolute;
+                right: 5px;
+                bottom: 10px;
+                width: 100px;
+                height: 100px;
+                transition: 0.5s;
+                background-color: #F7F7F7;
+                transition: transform 0.5s ease 0s;
+            }   
+        }
+        .sometit{
+            position: absolute;
+            z-index: 1;
+            top: 25px;
+            left: 25px;
+            overflow: hidden;
+            overflow-wrap: break-word;
+            max-width: 130px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            font-size: 14px;
+        }
+        .somecon{
+            position: absolute;
+            z-index: 1;
+            top: 50px;
+            left: 25px;
+            max-width: 50px;
+            font-size: 12px;
+            color: #666;
+        }
+        .x{
+            position: absolute;
+            top: 130px;
+            left: 0;
+            width: 382px;
+            height: 1px;
+            background-color: #E6E6E6;
+        }
+        .y{
+            position: absolute;
+            top: 0;
+            left: 191px;
+            width: 1px;
+            height: 260px;
+            background-color: #E6E6E6;
+        }
+        .more{
+            overflow: hidden;
+            clear: both;
+            height: 130px;
+            padding-top: 10px;
+           
+            a{
+                display: inline-block;
+                width: 180px;
+                overflow: hidden;
+                margin-right: 15px;
+                &:hover{
+                    img{
+                        transform: translateX(-12px);
+                    }
+                }
+            }
+            a.last{
+                margin-right: 0 !important;
+            }
+            img{
+                width: 196px;
+                height: 130px;
+                transition: transform 0.4s ease 0s;
+            }
+        }
+    }
+}
