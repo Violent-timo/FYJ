@@ -1,5 +1,10 @@
+@import "indexConn";
 body{
     background-color: #f2f2f2;
+}
+.container{
+    width: 1210px;
+    margin: 0 auto;
 }
 header{
     position: relative;
@@ -22,6 +27,12 @@ header{
             margin: 1px 1px 0 1px;
             white-space: nowrap;
             line-height: 34px;
+            &:hover{
+                color: #F30213;
+                span{
+                    background-position: -60px 0;
+                }
+            }
             span{
                 display: inline-block;
                 vertical-align: middle;
@@ -37,6 +48,19 @@ header{
                 width: 7px;
                 height: 4px;
                 margin-left: 9px;
+            }
+        }
+        .back-home{
+            padding: 0 !important;
+            &:hover{
+              
+                span{
+                    background-position: -20px 0;
+                }
+            }
+            span{
+                background: url('../imgs/web_common_pic.png') no-repeat;
+                
             }
         }
     }

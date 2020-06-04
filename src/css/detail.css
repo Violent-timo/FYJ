@@ -1,0 +1,192 @@
+@charset "UTF-8";
+i.fa {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+#log .container {
+  height: 46px;
+  line-height: 46px;
+  background-color: blue;
+}
+
+#detail .container {
+  height: 500px;
+}
+#detail .gods-pic {
+  display: block;
+  position: relative;
+  width: 380px;
+  height: 490px;
+  float: left;
+  text-align: center;
+}
+#detail .gods-pic .smallimg {
+  display: block;
+  width: 360px;
+  height: 360px;
+  position: relative;
+  margin: auto;
+}
+#detail .gods-pic .controll {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 360px;
+  height: 56px;
+  margin: 10px auto 0 auto;
+}
+#detail .gods-pic .handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 360px;
+  height: 30px;
+  padding-top: 10px;
+}
+#detail .gods-pic .handle a {
+  margin-left: 10px;
+  line-height: 30px;
+  float: left;
+}
+#detail .gods-pic .handle a em {
+  margin-left: 5px;
+  color: #333;
+  font-style: normal;
+  font-weight: 500;
+}
+#detail .gods-pic .handle .fa {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+#detail .gods-pic .handle .fa::before {
+  content: "";
+}
+#detail .gods-pic .handle .share {
+  position: relative;
+  float: left;
+  color: #555;
+  background-color: #FFF;
+  padding: 4px 6px;
+  margin-left: 10px;
+  line-height: 20px;
+  border: solid #FFF;
+  border-width: 1px 1px 0 1px;
+  background-color: #FFF;
+}
+#detail .gods-pic .handle .share .fa-share::before {
+  content: "";
+}
+#detail .gods-pic .handle .share .fa-down::before {
+  content: "";
+}
+#detail .gods-pic .handle .QRcode {
+  float: left;
+  margin-left: 30px;
+  line-height: 30px;
+}
+#detail .gods-pic .handle .QRcode .fa::before {
+  content: "";
+}
+#detail .indetail {
+  position: relative;
+  float: left;
+  width: 660px;
+  height: 490px;
+  margin-left: 10px;
+}
+#detail .indetail .goods-name {
+  padding: 14px 8px 10px 8px;
+}
+#detail .indetail .goods-name h1 {
+  display: block;
+  font: normal 20px/28px "Microsoft Yahei";
+  margin-bottom: 4px;
+  color: #000;
+}
+#detail .indetail .goods-name strong {
+  font-family: "Microsoft Yahei";
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #e4393c;
+}
+#detail .indetail dt {
+  text-align: left;
+  width: 60px;
+  height: 30px;
+  margin-left: 20px;
+  color: #777;
+  font-size: 12px;
+  line-height: 30px;
+  display: inline-block;
+}
+#detail .indetail dd {
+  text-align: left;
+  width: 570px;
+  color: #000;
+  font-size: 12px;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 26px;
+}
+#detail .indetail .goods-price {
+  background: url("../imgs/ncs_meta_bg.png") no-repeat 50% 50%;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+#detail .indetail .goods-price dl {
+  padding: 12px 0;
+}
+#detail .indetail .goods-price strong {
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: #e4393c;
+  vertical-align: text-bottom;
+}
+#detail .indetail .goods-price span {
+  color: #e4393c;
+  font-weight: 500;
+  vertical-align: top;
+}
+#detail .indetail .goods-sale {
+  position: relative;
+  margin-bottom: 5px;
+}
+#detail .indetail .goods-sale .cheap {
+  float: left;
+}
+#detail .indetail .goods-sale .cheap .cheap-con {
+  height: 20px;
+  padding: 4px 9px 6px 0;
+  background-color: #FFF;
+  border: solid #FFF;
+  border-width: 1px 1px 0 1px;
+  line-height: 20px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#detail .indetail .goods-sale .cheap strong, #detail .indetail .goods-sale .cheap em {
+  font-weight: normal;
+}
+#detail .indetail .goods-sale .cheap em {
+  margin-left: 4px;
+  color: #6286ca;
+}
+#detail .indetail .goods-sale .cheap .fa {
+  color: #6286ca;
+}
+#detail .indetail .goods-sale .cheap .fa::before {
+  content: "";
+}
+#detail .gods-change {
+  display: block;
+  float: right;
+  width: 140px;
+  height: 480px;
+  background-color: #FAFAFA;
+}
+
+/*# sourceMappingURL=detail.css.map */

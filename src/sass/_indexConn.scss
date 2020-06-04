@@ -22,10 +22,12 @@ $hovercolor:#F30213;
     }
   } 
 
-.container{
-    width: 1210px;
-    margin: 0 auto;
+%ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 
 input[type='submit']{
     display: block;

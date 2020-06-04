@@ -34,6 +34,7 @@
             $telerr.css({
                 display:'block'
             })
+            $telerr.html("请输入正确的手机号");
             $tel.val('');
             $tel[0].focus();
         }
@@ -56,6 +57,7 @@
                     tellock=false;
                 }else{
                     $agreeerr.css({display:'block'});
+                    
                 }
             }
         }else{
@@ -119,6 +121,7 @@
             });
         }else{
             $encodeerr.css({display:'block'}).html('请输入正确的验证码');
+            codelock=false;
         }
        
     })
@@ -146,7 +149,6 @@
     })
 
     //注册按钮
-    console.log($subbtn);
     $subbtn.on('click',function(){
         console.log(codelock,pasblock)
         if(codelock&&pasblock){

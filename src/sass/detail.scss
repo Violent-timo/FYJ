@@ -1,0 +1,194 @@
+i.fa{
+    font-size: 14px;
+    margin-right: 4px;
+}
+#log{
+    .container{
+        height: 46px;
+        line-height: 46px;
+        background-color: blue;
+    }
+}
+#detail{
+    .container{
+        height: 500px;
+    }
+    .gods-pic{
+        display: block;
+        position: relative;
+        width: 380px;
+        height: 490px;
+        float: left;
+        text-align: center;
+        .smallimg{
+            display: block;
+            width: 360px;
+            height: 360px;
+            position: relative;
+            margin: auto;
+        }
+        .controll{
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            width: 360px;
+            height: 56px;
+            margin: 10px auto 0 auto;
+        }
+        .handle{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 360px;
+            height: 30px;
+            padding-top: 10px;
+            a{
+                margin-left: 10px;
+                line-height: 30px;
+                float: left;
+                em{
+                    margin-left: 5px;
+                    color: #333;
+                    font-style: normal;
+                    font-weight: 500;
+                }
+            }
+            .fa{
+                font: normal normal normal 14px/1 FontAwesome;
+                &::before{
+                    content: "\f006";
+                }
+            }
+            .share{
+                position: relative;
+                float: left;
+                color: #555;
+                background-color: #FFF;
+                padding: 4px 6px;
+                margin-left: 10px;
+                line-height: 20px;
+                border: solid #FFF;
+                border-width: 1px 1px 0 1px;
+                background-color: #FFF;
+                .fa-share::before{
+                    content: "\f1e0";
+                }
+                .fa-down::before{
+                    content: "\f0d7";
+                }
+            }
+            .QRcode{
+                float: left;
+                margin-left: 30px;
+                line-height: 30px;
+                .fa::before{
+                    content: "\f029";
+                }
+            }
+        }
+    }
+    .indetail{
+        position: relative;
+        float: left;
+        width: 660px;
+        height: 490px;
+        margin-left: 10px;
+        .goods-name{
+            padding: 14px 8px 10px 8px;
+            h1{
+                display: block;
+                font: normal 20px/28px "Microsoft Yahei";
+                margin-bottom: 4px;
+                color: #000;
+            }
+            strong{
+                font-family: "Microsoft Yahei";
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                color: #e4393c;
+            }
+        }
+        dt{
+            text-align: left;
+            width: 60px;
+            height: 30px;
+            margin-left: 20px;
+            color: #777;
+            font-size: 12px;
+            line-height: 30px;
+            display: inline-block;
+        }
+        dd{
+            text-align: left;
+            width: 570px;
+            color: #000;
+            font-size: 12px;
+            line-height: 30px;
+            display: inline-block;
+            vertical-align: top;
+            display: inline-block;
+            font-size: 26px;
+        }
+        .goods-price{
+            background: url("../imgs/ncs_meta_bg.png") no-repeat 50% 50%;
+            background-size: cover;
+            margin-bottom: 10px;
+            dl{
+                padding: 12px 0;
+            }
+            strong{
+                font-size: 16px;
+                margin-left: 5px;
+                font-weight: bold;
+                color: #e4393c;
+                vertical-align: text-bottom;
+                
+            }
+            span{
+                color: #e4393c;
+                font-weight: 500;
+                vertical-align: top;
+            }
+            
+        }
+        .goods-sale{
+            position: relative;
+            margin-bottom: 5px;
+            .cheap{
+                float: left;
+                .cheap-con{
+                    height: 20px;
+                    padding: 4px 9px 6px 0;
+                    background-color: #FFF;
+                    border: solid #FFF;
+                    border-width: 1px 1px 0 1px;
+                    line-height: 20px;
+                    cursor: pointer;
+                    font-size: 12px;
+                }
+                strong,em{
+                    font-weight: normal;
+                }
+                em{
+                    margin-left: 4px;
+                    color: #6286ca;
+                }
+                .fa{
+                    color: #6286ca;
+                }
+                .fa::before{
+                    content: "\f101";
+                }
+            }
+        }
+    }
+    .gods-change{
+        display: block;
+        float: right;
+        width: 140px;
+        height: 480px;
+        background-color: #FAFAFA;
+    }
+  
+}

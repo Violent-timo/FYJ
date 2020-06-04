@@ -1,3 +1,26 @@
+//导入头部
+!function(){
+    const $wrap=$('#wrap');
+    const $head=$('#head');
+    $head.load("./connhead.html",function(){
+        $('.back-home').css({display:'none'})
+    })
+    $wrap.load("./conn.html",function(){
+        $('.all-list').css({
+            display:'block',
+            'background-color':"#6E6568",
+            'box-shadow':'none'
+        })
+        $('.all-list .name a').css({
+            color:'#fff',
+        })
+        $('.all-list .name span').css({
+            color:'#fff',
+        })
+    });
+}();
+
+
 //live效果
 !function(){
     const $liveimg=$('.firlive .live-special img');
@@ -22,3 +45,4 @@
         move();
    },11000)
 }()
+
