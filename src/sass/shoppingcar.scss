@@ -1,0 +1,417 @@
+body{
+    background-color: #fff !important;
+}
+.fa{
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    color: #C1C1C1;
+}
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  } 
+#flow{
+    height: 100px;
+    width: 100%;
+    .container{
+        &::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+    .logo{
+        float: left;
+        width: 240px;
+        height: 96px;
+        line-height: 96px;
+
+        a{
+            display: inline-block;
+            width: 240px;
+            height: 68px;
+            margin-top: 14px;
+        }
+        img{
+            width: 240px;
+            height: 68px;
+        }
+    }
+    .flow-wrap{
+        float: right;
+        height: 96px;
+        ul{
+            margin-top: 15px;
+        }
+        .active{
+            sub{
+                background-color: #616161;
+                border-color: #616161;
+                box-shadow: 0 0 1px 3px #E1E1E1;
+            }
+            .hr{
+                background-color: #616161;
+            }
+            p,sub,i{
+                opacity: 1;
+            }
+            
+            
+        } 
+        li{
+            position: relative;
+            width: 160px;
+            height: 70px;
+            float: left;
+            overflow: hidden;
+            i{
+                position: absolute;
+                background: #FFF url('../imgs/nc_cart_pic.png') no-repeat;
+                width: 30px;
+                height: 30px;
+                display: block;
+                left: 65px;
+                opacity: 0.25;
+                top: -1px;
+            }
+            sub{
+                background-color: #FFF;
+                width: 5px;
+                height: 5px;
+                margin-left: -3px;
+                border: solid 1px #CCC;
+                border-radius: 4px;
+                position: absolute;
+                top: 31px;
+                left: 50%;
+            }
+            .hr{
+                position: absolute;
+                top: 34px;
+                background-color: #DDD;
+                width: 100%;
+                height: 1px;
+                font-weight: normal;
+            }
+            p{
+                text-align: center;
+                width: 100%;
+                height: 24px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: #616161;
+                opacity: 0.25;
+            }
+            .item2{
+                background-position: -30px 0;
+            }
+            .item3{
+                background-position: -60px 0;
+            }
+            .item4{
+                background-position: -90px 0;
+            }
+        }
+    }
+}
+
+#main{
+    .main-title{
+        height: 50px;
+        
+        padding: 15px 0;
+        h3{
+            font: lighter 16px/30px arial,"microsoft yahei";
+            color: #616161;
+        }
+        h5{
+            font: 12px/20px arial,"microsoft yahei";
+            color: #BFBFBF;
+        }
+    }
+    .buy-wrap{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .buy-title{
+        width: 1208px;
+        height: 30px;
+        padding: 4px 0;
+        border: solid 1px #E9E9E9;
+        background-color: #F3F3F3;
+        margin-bottom: 20px;
+        ul{
+            @extend %clearfix;
+        }
+        li{
+            float: left;
+            color: #212121;
+            line-height: 30px;
+        }
+    }
+    .allchecked{
+        padding-left: 18px;
+        width: 90px;
+        input{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    }
+    .goods{
+        width: 480px;
+        text-indent: 12px;
+    }
+    .num{
+        width: 166px;
+        text-indent: 70px;
+    }
+    .price{
+        width: 175px;
+        padding-right: 15px;
+        text-align: right;
+    }
+    .rebate{
+        width: 78px;
+        text-indent: 30px;
+    }
+    .amount{
+        width: 150px;
+        text-align: right;
+    }
+    .line{
+        width: 100%;
+        border-bottom: solid 2px #AAAAAA;
+    }
+    .buy-list{
+        margin-bottom: 20px;
+        background: #FFF;
+    }
+    .things{
+        position: relative;
+        padding: 20px 19px 25px 19px;
+        border-style: solid;
+        border-color: #F1F1F1;
+        border-width: 0 1px 1px;
+        @extend %clearfix;
+        input[type='checkbox']{
+            float: left;
+        }
+        .thing-img{
+            margin-left: 8px;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            float: left;
+            border: solid 1px #E1E1E1;
+            overflow: hidden;
+            img{
+                max-width: 80px;
+            }
+        }
+        .thing-main{
+            width: 1050px;
+            float: left;
+            margin-left: 15px;
+            .name{
+                float: left;
+                display: block;
+                width: 450px;  
+                line-height: 20px;
+                margin-bottom: 10px;
+                height: 80px;
+                overflow: hidden;
+            }
+            .singles{
+                margin-top: 30px;
+                margin-left: 36px;
+                float: left;
+            }
+           .numtog{
+             
+                float: left;
+                a{
+                    // position: relative;
+                    display: block;
+                    width: 22px;
+                    height: 24px;
+                    text-align: center;
+                    float: left;
+                    margin-right: -1px;
+                    border: solid #E1E1E1 1px;
+                    border-radius: 3px 0 0 3px;
+                    background-color: #FAFAFA;
+                    line-height: 24px;
+                }
+                input{
+                    float: left;
+                    display: block;
+                    float: left;
+                    width: 40px;
+                    height: 20px;
+                    text-align: center;
+                    padding: 2px 4px;
+                    border: solid 1px #E1E1E1;
+                    line-height: 20px;
+                }
+                .reduce{
+                    cursor: not-allowed;
+                    .fa::before{
+                        content: "\f068";
+                    }
+                }
+                .add i{
+                    color: #000;
+                } 
+                .add .fa::before{
+                    content: "\f067";
+                }
+               
+           }
+        }
+        .thing-price{
+            float: left;
+            width: 100px;
+            text-align: center;
+            line-height: 26px;
+            color: #616161;
+            margin-left: 146px;
+            span{
+                font-weight: 400;
+            }
+        }
+        .thing-rebate{
+            text-align: center;
+            line-height: 26px;
+            margin-top: 4px;
+            float: left;
+            padding: 1px 4px;
+            border-radius: 2px;
+            background-color: #E4393C;
+            font-size: 11px;
+            line-height: 16px;
+            color: #FFF;
+            cursor: default;
+        }
+        .thing-amount{
+            margin-left: 25px;
+            float: left;
+            width: 140px;
+            text-align: right;
+            .money{
+                line-height: 26px;
+                color: #E4393C;
+                font-size: 14px;
+                font-weight: 700;    
+            }
+            .save{
+                display: none;
+                color: #3f9338;
+                
+            }
+        }
+        .thing-remove{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 60px;
+            height: 18px;
+            padding: 4px 12px 2px 0;
+            background-color: #F5F5F5;
+            a{
+                margin-left: 12px;
+                font-size: 18px;
+                float: left;
+            }
+            .collect{
+                i::before{
+                    content: "\f006";
+                }
+            }
+            .addcar{
+                i::before{
+                    content: "\f014";
+                }
+            }
+        }
+    }
+    .buy-foot{
+        position: relative;
+        background-color: #EEE;
+        height: 56px;
+        border-bottom: solid 1px #E1E1E1;
+        line-height: 56px;
+        .action{
+            float: left;
+            padding-left: 20px;
+            width: 190px;
+            color: #222;
+            .checkall{
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+            .delete{
+                &:hover{
+                    color: #F30213;
+                }
+                margin-left: 30px;
+            }
+        }
+        .summary{
+            float: left;
+            width: 820px;
+            @extend %clearfix;
+            dl{
+                float: right;
+                height: 56px;
+            }
+            dt{
+                float: left;
+            }
+            dd{
+                float: left;
+                margin-right: 30px;
+            }
+            .value{
+                display: inline-block;
+                margin-right: 5px;
+                font-size: 16px;
+                color: #000;
+            }
+            .amount-total{
+                font-weight: bold;
+                font-size: 20px;
+                color: #E4393C;
+                strong{
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .form{
+            float: right;
+            button{
+                background-color: #E4393C;
+                color: #FFF;
+                cursor: pointer;
+                text-align: center;
+                width: 150px;
+                height: 56px;
+                border: none 0;
+                font-size: 16px;
+                line-height: 56px;
+                font-weight: 600;
+            }
+        }    
+    }   
+}   
+    
+
+

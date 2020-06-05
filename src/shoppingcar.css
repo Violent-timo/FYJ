@@ -1,0 +1,74 @@
+body {
+  background-color: #fff !important;
+}
+
+a {
+  text-decoration: solid;
+}
+
+#flow {
+  height: 100px;
+  width: 100%;
+}
+#flow .container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#flow .logo {
+  float: left;
+  width: 240px;
+  height: 96px;
+  line-height: 96px;
+}
+#flow .logo a {
+  display: inline-block;
+  width: 240px;
+  height: 68px;
+  margin-top: 14px;
+}
+#flow .logo img {
+  width: 240px;
+  height: 68px;
+}
+#flow .flow-wrap {
+  float: right;
+  height: 96px;
+}
+#flow .flow-wrap ul {
+  margin-top: 15px;
+}
+#flow .flow-wrap li {
+  position: relative;
+  width: 160px;
+  height: 70px;
+  float: left;
+}
+#flow .flow-wrap li i {
+  position: absolute;
+  background: #FFF url("../imgs/nc_cart_pic.png") no-repeat;
+  width: 30px;
+  height: 30px;
+  display: block;
+  left: 65px;
+}
+#flow .flow-wrap li sub {
+  background-color: #FFF;
+  width: 5px;
+  height: 5px;
+  margin-left: -3px;
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 2;
+  top: 34px;
+  left: 50%;
+}
+#flow .flow-wrap li hr {
+  position: absolute;
+  top: 34px;
+  background-color: #616161;
+  width: 100%;
+}
+
+/*# sourceMappingURL=shoppingcar.css.map */

@@ -1,0 +1,399 @@
+@charset "UTF-8";
+body {
+  background-color: #fff !important;
+}
+
+#sort-bar .container {
+  height: 37px;
+  padding: 0 8px;
+  border-bottom: 1px solid #E7E3E7;
+  background: #F1F1F1;
+  box-sizing: border-box;
+}
+#sort-bar .container input {
+  float: left;
+  height: 23px;
+  padding: 0 2px;
+  text-align: left;
+  border: solid 1px #CCC;
+  font-family: Verdana;
+  color: #AAA;
+  line-height: 23px;
+  width: 53px;
+}
+#sort-bar .container .btn {
+  float: left;
+  height: 20px;
+  padding: 1px 9px 3px 9px;
+  margin-left: 14px;
+  border: solid 1px #f30213;
+  border-radius: 0;
+  background-color: #FFF;
+  font-size: 12px !important;
+  line-height: 20px;
+  color: #f30213;
+}
+#sort-bar .array {
+  display: block;
+  float: left;
+  margin: 6px 13px 6px 0;
+}
+#sort-bar .array li {
+  float: left;
+}
+#sort-bar .array li a {
+  display: block;
+  height: 23px;
+  padding: 0 9px;
+  border: solid 1px #CCC;
+  background-color: #FFF;
+  font-size: 12px;
+  line-height: 23px;
+  color: #333;
+}
+#sort-bar .array .default a {
+  border-color: #f30213;
+  background-color: #f30213;
+  color: #FFF;
+}
+#sort-bar .array .icon {
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  margin-top: 5px;
+  margin-left: 4px;
+  background: url("../imgs/search.ele.png") no-repeat 0 -380px;
+}
+#sort-bar .sort-same {
+  display: block;
+  float: left;
+  height: 25px;
+  padding: 6px 14px;
+  margin: 0;
+  line-height: 25px;
+  overflow: hidden;
+  color: #888;
+}
+#sort-bar .price-area {
+  width: 130px;
+}
+#sort-bar .price-area .wrap {
+  width: 188px;
+  height: 26px;
+}
+#sort-bar .price-area span {
+  display: block;
+  float: left;
+  width: 12px;
+  height: 25px;
+  text-align: center;
+}
+#sort-bar .since {
+  width: 116px;
+}
+#sort-bar .since .wrap {
+  width: 174px;
+  height: 26px;
+}
+#sort-bar .since span {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+#sort-bar .since span.right {
+  margin-right: 0px;
+  margin-left: 5px;
+}
+#sort-bar .since input {
+  width: 40px;
+}
+#sort-bar .pull-down {
+  position: relative;
+  display: block;
+  float: left;
+  width: 98px;
+  height: 25px;
+  padding: 6px 0;
+  border: solid #E7E7E7;
+  border-width: 0 1px;
+  margin-left: -1px;
+}
+#sort-bar .pull-down:hover .layer {
+  display: block;
+}
+#sort-bar .pull-down:hover .arrow {
+  transform: rotateZ(180deg);
+}
+#sort-bar .pull-down .label {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  padding: 6px 14px;
+}
+#sort-bar .pull-down .label span {
+  display: block;
+  float: left;
+  color: #888;
+  line-height: 25px;
+}
+#sort-bar .pull-down .label .arrow {
+  display: block;
+  float: left;
+  width: 13px;
+  height: 7px;
+  background: url("../imgs/search.ele.png") no-repeat 0 0;
+  margin: 9px 0 0 7px;
+  transition: 0.2s ease-in-out;
+}
+#sort-bar .pull-down .layer {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 37px;
+  left: -1px;
+  right: -1px;
+  border: solid #E7E7E7;
+  border-width: 0 1px 1px 1px;
+  background-color: #FFF;
+}
+#sort-bar .pull-down .layer li a {
+  display: block;
+  height: 20px;
+  padding: 6px 14px;
+  text-align: left;
+  color: #888;
+}
+#sort-bar .pull-down .layer li a:hover {
+  background-color: #F5F5FA;
+  color: #e4393c;
+}
+#sort-bar .gift span {
+  display: block;
+  cursor: pointer;
+}
+#sort-bar .gift span a {
+  color: #888;
+}
+#sort-bar .gift .inputgif {
+  background: #fff url("../imgs/right.png") no-repeat 999px 999px;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #e4e4e4;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+#g-list {
+  margin-top: 5px;
+}
+#g-list .list-wrap {
+  width: 100%;
+  height: auto;
+}
+#g-list .list-wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#g-list .list-wrap li {
+  position: relative;
+  display: block;
+  float: left;
+  width: 240px;
+  height: 475px;
+  margin-top: 10px;
+}
+#g-list .list-wrap li:hover .goods-content {
+  border: solid 1px #E9E9E9;
+  box-shadow: 0 0 2px 2px #F8F8F8;
+}
+#g-list .list-wrap .goods-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 38px 9px 10px 9px;
+  background-color: #FFF;
+  border: solid 1px #FFF;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+#g-list .list-wrap .goods-pic {
+  background: #FFF;
+  width: 220px;
+  height: 220px;
+}
+#g-list .list-wrap .goods-pic a {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+}
+#g-list .list-wrap .goods-pic img {
+  max-width: 220px;
+  max-height: 220px;
+}
+#g-list .list-wrap .goods-info {
+  width: 220px;
+  background-color: #FFF;
+}
+#g-list .list-wrap .p-price p {
+  position: relative;
+  display: block;
+  height: 22px;
+  line-height: 22px;
+  padding: 15px 0 8px 0;
+  color: #E4393C;
+  font-size: 20px;
+}
+#g-list .list-wrap .p-price p span {
+  font-weight: 400;
+  font-size: 16px;
+}
+#g-list .list-wrap .p-price p i {
+  float: right;
+  height: 14px;
+  padding: 0px 2px;
+  margin-top: 4px;
+  margin-right: 6px;
+  border-radius: 2px;
+  background-color: #f30213;
+  font-size: 11px;
+  color: #FFF;
+  line-height: 14px;
+}
+#g-list .list-wrap .p-name {
+  height: 40px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+#g-list .list-wrap .p-name p {
+  line-height: 20px;
+  overflow: hidden;
+}
+#g-list .list-wrap .p-commit {
+  width: 100%;
+  height: 18px;
+  margin-top: -3px;
+  margin-bottom: 9px;
+}
+#g-list .list-wrap .p-commit strong {
+  float: left;
+  color: #a7a7a7;
+  font-weight: 400;
+  margin-right: 20px;
+}
+#g-list .list-wrap .p-commit strong a {
+  color: #646fb0;
+  font-family: verdana;
+  font-weight: 700;
+}
+#g-list .list-wrap .p-commit .remark {
+  margin-right: 10px;
+}
+#g-list .list-wrap .p-commit .remark a {
+  color: #a7a7a7;
+}
+#g-list .list-wrap .p-shop {
+  height: 18px;
+  line-height: 18px;
+  margin-top: -3px;
+  margin-bottom: 9px;
+}
+#g-list .list-wrap .p-shop a {
+  color: #999;
+}
+#g-list .list-wrap .p-icons {
+  height: 16px;
+  margin-bottom: 12px;
+}
+#g-list .list-wrap .p-icons i {
+  overflow: hidden;
+  float: left;
+  height: 16px;
+  text-align: center;
+  padding: 0 3px;
+  margin-right: 3px;
+  border-radius: 2px;
+  background: #F30213;
+  font-family: "Helvetica Neue", "Hiragino Sans GB", SimSun, serif;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFF;
+  cursor: default;
+}
+#g-list .list-wrap .p-operate {
+  margin-bottom: 10px;
+}
+#g-list .list-wrap .p-operate .btn {
+  position: relative;
+  float: left;
+  height: 25px;
+  padding: 0 3px 0 24px;
+  border: 1px solid #DDD;
+  background: #fff;
+  line-height: 25px;
+}
+#g-list .list-wrap .p-operate .btn:hover {
+  border-color: #F30213;
+  z-index: 2;
+}
+#g-list .list-wrap .p-operate .btn i {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("../imgs/search.ele.png") no-repeat;
+  font-style: normal;
+  transition: background-position 0.15s ease-in-out;
+}
+#g-list .list-wrap .p-operate .focus {
+  width: 28px;
+}
+#g-list .list-wrap .p-operate .focus:hover {
+  border-color: #F30213;
+  z-index: 2;
+}
+#g-list .list-wrap .p-operate .focus:hover i {
+  background-position: 0 -460px;
+}
+#g-list .list-wrap .p-operate .focus a {
+  display: block;
+  color: #999;
+}
+#g-list .list-wrap .p-operate .focus a i {
+  background-position: 0 -440px;
+}
+#g-list .list-wrap .p-operate .focus .active {
+  display: none;
+}
+#g-list .list-wrap .p-operate .focus .active span {
+  font-size: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+  font: normal normal normal 14px/1 FontAwesome;
+}
+#g-list .list-wrap .p-operate .focus .active span::before {
+  content: "";
+}
+#g-list .list-wrap .p-operate .addcar {
+  width: 78px;
+  text-align: center;
+  margin-left: -1px;
+}
+#g-list .list-wrap .p-operate .addcar i {
+  background-position: 0 -500px;
+}
+
+/*# sourceMappingURL=list.css.map */

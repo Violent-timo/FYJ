@@ -22,3 +22,4 @@ html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,
     legend{font:12px/1.14 Microsoft YaHei,arial;color:#333;outline:0;}
     body{background:#fff;}
     a,a:hover{color:#333;}
+    em,strong{font-weight: normal;}

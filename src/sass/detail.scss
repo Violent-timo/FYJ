@@ -1,12 +1,23 @@
-i.fa{
+.fa{
     font-size: 14px;
     margin-right: 4px;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+input[type='text']{
+    font: 12px/1.5 Tahoma,Arial,"\5b8b\4f53",sans-serif;
+    color: #777;
+    background-color: #FFF;
+    vertical-align: top;
+    display: inline-block;
+    min-height: 20px;
+    padding: 5px;
+    border: solid 1px #E6E9EE;
+    outline: 0 none;
 }
 #log{
     .container{
         height: 46px;
         line-height: 46px;
-        background-color: blue;
     }
 }
 #detail{
@@ -26,6 +37,30 @@ i.fa{
             height: 360px;
             position: relative;
             margin: auto;
+            img{
+                width: 360px;
+                height: 360px;
+            }
+        }
+        .smallshade{
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: #ffffff;
+            // border: 1px solid #999;
+            opacity: 0.7;
+        }
+        .bigshade{
+            width: 360px;
+            height: 360px;
+            background-color: red;
+            position: absolute;
+            left: 380px;
+            top: 0;
+            z-index: 10;
+            background: url("../imgs/list.jpg")no-repeat;
+            background-size: 720px 720px;
+            background-position: 0px 0px;
         }
         .controll{
             position: absolute;
@@ -49,7 +84,6 @@ i.fa{
                 em{
                     margin-left: 5px;
                     color: #333;
-                    font-style: normal;
                     font-weight: 500;
                 }
             }
@@ -128,7 +162,6 @@ i.fa{
             display: inline-block;
             vertical-align: top;
             display: inline-block;
-            font-size: 26px;
         }
         .goods-price{
             background: url("../imgs/ncs_meta_bg.png") no-repeat 50% 50%;
@@ -138,17 +171,20 @@ i.fa{
                 padding: 12px 0;
             }
             strong{
+                display: block;
+                float: left;
                 font-size: 16px;
                 margin-left: 5px;
-                font-weight: bold;
+                font-weight: normal;
                 color: #e4393c;
-                vertical-align: text-bottom;
                 
             }
             span{
+                float: left;
+                display: block;
+                font-size: 26px;
                 color: #e4393c;
                 font-weight: 500;
-                vertical-align: top;
             }
             
         }
@@ -167,9 +203,7 @@ i.fa{
                     cursor: pointer;
                     font-size: 12px;
                 }
-                strong,em{
-                    font-weight: normal;
-                }
+               
                 em{
                     margin-left: 4px;
                     color: #6286ca;
@@ -182,6 +216,152 @@ i.fa{
                 }
             }
         }
+        .address{
+            border-top: 1px solid #F1F1F1;
+            span{
+                display: block;
+                float: left;
+                margin-right: 5px;
+            }
+            .chosearea{
+                height: 20px;
+                float: left;
+                margin: 5px 6px 0 0;
+            }
+            .text{
+                line-height: 20px;
+                background-color: #FFF;
+                height: 20px;
+                float: left;
+                padding-right: 20px;
+                position: relative;
+                cursor: pointer;
+            }
+            b{
+                font-size: 0;
+                line-height: 0;
+                background: url("../imgs/2014_ncs_public_img.png") no-repeat -50px -100px;
+                display: block;
+                width: 8px;
+                height: 4px;
+                position: absolute;
+                top: 9px;
+                right: 6px;
+            }
+            .prompt{
+                line-height: 28px;
+                color: #555;
+                strong{
+                    font-weight: 500;
+                    margin-right: 12px;
+                }
+                
+            }
+        }
+        .services{
+            position: relative;
+            padding-top: 5px;
+            margin-top: 10px;
+            dd a{
+                color: #e80012;
+            }
+        }
+        .key{
+            position: relative;
+            border-top: solid 1px #F1F1F1;
+            margin-top: 10px;
+            padding-top: 10px;
+            .num{
+                float: left;
+            }
+            .tognum{
+                position: relative;
+                display: block;
+                width: 28px;
+                height: 28px;
+                text-align: center;
+                float: left;
+                border: solid #E1E1E1 1px;
+                background-color: #FAFAFA;
+                line-height: 28px;
+                cursor: pointer;
+            }
+            .reduce{
+                background-color: #FAFAFA;
+                border-color: #E1E1E1;
+                cursor: not-allowed;
+                
+            }
+            i{
+                display: block;
+                margin:  8px auto;
+                color: #C1C1C1;
+                &::before{
+                    content: "\f068";
+                }
+            }
+            input{
+                position: relative;
+                display: block;
+                float: left;
+                width: 40px;
+                height: 20px;
+                text-align: center;
+                padding: 4px;
+                border: solid 1px #E1E1E1;
+                line-height: 20px;
+            }
+            .add{
+                i{
+                    color: #000;
+                    &::before{
+                        content: "\f067";
+                    }
+                }
+                
+            }
+            .unit{
+                margin-left: 5px;
+            }
+            .inventory{
+                float: left;
+                margin-left: 10px;
+
+            }
+        }
+        .buy{
+            margin-top: 10px;
+            .btn{
+                height: 42px;
+                padding: 10px 0 10px 80px;
+            }
+            a{
+                font: lighter 18px/40px "Microsoft Yahei";
+                color: #FFF;
+                display: inline-block;
+                width: 150px;
+                height: 40px;
+                text-align: center;
+                margin: 0 10px 0 0;
+                border: solid 1px;
+            }
+            .buybtn{
+                border-color: #e4393c;
+                background-color: #e4393c;
+            }
+            .addbtn{
+                border-color: #F2DCBC;
+                background-color: #FFF5EC;
+                color: #e4393c;
+                .fa::before{
+                    content: "\f07a";
+                }
+            }
+        }
+        .tip{
+            margin: 10px 0;
+        }
+        
     }
     .gods-change{
         display: block;
@@ -189,6 +369,56 @@ i.fa{
         width: 140px;
         height: 480px;
         background-color: #FAFAFA;
+        .tit{
+            height: 20px;
+            line-height: 20px;
+            padding: 10px 10px 0 10px;
+            h4{
+                display: inline-block;
+                font-size: 12px;
+                line-height: 20px;
+                color: #333;
+                font-weight: normal;
+            }
+            a{
+                float: right;
+                color: #777;
+            }
+            i{
+                font-size: 14px;
+                margin-right: 5px;
+                &::before{
+                    content: "\f021";
+                }
+            }
+           
+        }
+        ul{
+            margin: 0 10px;
+        }
+        li{
+            padding-top: 8px;
+        }
+        .imgwrap{
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            overflow: hidden;
+            img{
+                width: 120px;
+            }
+        }
+        .price{
+            width: 100%;
+            height: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #616161;
+            line-height: 20px;
+            font-family: Verdana;
+        }
+        
     }
   
 }

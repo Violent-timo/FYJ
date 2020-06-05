@@ -139,12 +139,13 @@
             clear: both;
             height: 130px;
             padding-top: 10px;
+            width: 396px;
            
             a{
                 display: inline-block;
                 width: 185px;
                 overflow: hidden;
-                margin-right: 2px;
+                margin-right: 8px;
                 &:hover{
                     img{
                         transform: translateX(-12px);
