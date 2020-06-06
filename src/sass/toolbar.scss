@@ -1,0 +1,316 @@
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  } 
+html,body{
+    height: 100%;
+}
+
+#toolbar-wrap{
+    position: fixed;
+    top: 0;
+    right: 0px;
+    z-index: 999;
+    width: 0;
+    height: 100%;
+}
+.toolbar[active="true"]{
+    right: 270px !important;
+}
+.toolbar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-right: 6px solid #7a6e6e;
+    transition: .7s;
+    ul{
+        position: absolute;
+        top: 50%;
+        left: -29px;
+        width: 35px;
+        margin-top: -61px;
+        li[active='true']{
+            background-color: #c81623;
+        }
+        li{
+            position: relative;
+            width: 35px;
+            height: 35px;
+            margin-bottom: 1px;
+            cursor: pointer;
+            background-color: #7a6e6e;
+            &:hover{
+                background-color: #c81623;
+                em{
+                    left: -62px;
+                    background-color: #c81623;
+                }
+            }
+            em{
+                width: 62px;
+                height: 35px;
+                line-height: 35px;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                font-family: 宋体;
+                position: absolute;
+                left: 36px;
+                top: 0px;
+                background-color: rgb(122, 110, 110);
+                border-radius: 3px 0px 0px 3px;
+                transition: left 0.3s ease-in-out 0.1s;
+                z-index: -1;
+            }
+            .tip{
+                position: absolute;
+                top: 8px;
+                right: 10px;
+                width: 6px;
+                height: 6px;
+                background-position: -100px 0;
+            }
+            .icon{
+                width: 34px;
+                height: 35px;
+                margin-left: 1px;
+                position: relative;
+                display: inline-block;
+                background-image: url('../imgs/toolbar_bg.png');
+                background-repeat: no-repeat;
+                z-index: 5;
+            }
+            
+            
+        }
+        
+        .menber{
+            &:hover{
+                .tip{
+                    display: none;
+                }
+            }
+            .tip{
+                display: inline-block;
+                background-image: url('../imgs/toolbar_bg.png');
+                background-repeat: no-repeat;
+            }
+        }
+        .cart{
+            .icon{
+                background-position: 0 -50px;
+            }
+        }
+        .discount-coupon{
+            .icon{
+                background-position: 0 -350px;
+            }
+        }
+        .like{
+            .icon{
+                background-position: 0 -100px;
+            }
+        }
+        .history{
+            .icon{
+                background-position: 0 -150px;
+            }
+        }
+        .message{
+            .icon{
+                background-position: 0 -200px;
+            }
+        }
+        .qrcode{
+            .icon{
+                background-position: 0 -300px;
+            }
+        }
+    }
+    .totop{
+        display: block;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 1px;
+        left: -29px;
+        z-index: 5;
+        bottom: 0;
+        background-color: #7a6e6e;
+        .icon{
+            width: 34px;
+            height: 35px;
+            margin-left: 1px;
+            display: inline-block;
+            background-image: url('../imgs/toolbar_bg.png');
+            background-repeat: no-repeat;
+            z-index: 5;
+            background-position: 0 -250px;
+        }
+    }
+    ol{
+        position: absolute;
+        left: 6px;
+        top: 0;
+        width: 270px;
+        height: 100%;
+        li[active="true"]{
+            display: block;
+        }
+        li{
+            display: none;
+            width: 270px;
+            height: 100%;
+            position: absolute;
+            background: #F0F0F0;
+            h3{
+                position: relative;
+                width: 270px;
+                height: 40px;
+                line-height: 40px;
+                background: #F0F0F0;
+                border-bottom: solid 1px #EEE;
+            }
+            .title{
+                display: inline-block;
+                height: 40px;
+                color: rgb(94, 80, 80);
+                font: 16px/40px 微软雅黑;
+            }
+            .fa{
+                display: inline-block;
+                background-image: url('../imgs/toolbar_bg.png');
+                background-repeat: no-repeat;
+                margin-right: 4px;
+                margin-left: 10px;
+                vertical-align: top;
+                width: 20px;
+                height: 20px;
+                margin-top: 10px;
+            }
+            .close{
+                display: inline-block;
+                background-image: url('../imgs/toolbar_bg.png');
+                background-repeat: no-repeat;
+                width: 10px;
+                height: 10px;
+                padding: 5px;
+                background-position: -95px -45px;
+                position: absolute;
+                right: 4px;
+                top: 11px;
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+        .showmain{
+            height: 800px;
+            
+        }
+        .carshow{
+            .fa{
+                background-position: -50px -50px;
+            }
+        }
+        .discount-couponshow{
+            .fa{
+                background-position: -100px -150px;
+            }
+        }
+        .likeshow{
+            .fa{
+                background-position: -50px -100px;
+            }
+        }
+        .historyshow{
+            .fa{
+                background-position: -50px -150px;
+            }
+        }
+        .messageshow{
+            .fa{
+                background-position:-50px -200px ;
+            }
+        }
+        .qrcodeshow{
+            .fa{
+                background-position: -98px -102px;
+            }
+        }
+    }
+    .menbershow{
+        .fa{
+            background-position: -50px 0;
+        }
+        .person-block{
+            padding: 10px;
+            background-color: #FFF;
+            margin-bottom: 10px;
+        }
+        .person-info{
+            position: relative;
+            height: 72px;
+            overflow: hidden;
+        }
+        .head-img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 65px;
+            height: 65px;
+            img{
+                border-radius: 50%;
+                width: 65px;
+                height: 65px;
+            }
+        }
+        .info{
+            margin-left: 75px;
+            margin-top: 10px;
+            line-height: 20px;
+        }
+        .name{
+            font-size: 14px;
+            
+        }
+        .vip{
+            margin-top: 3px;
+            cursor: pointer;
+            sub{
+                display: inline-block;
+                vertical-align: middle;
+                height: 16px;
+                padding: 1px 5px;
+                border-radius: 2px;
+                background-color: #555;
+                color: #FFF8B5;
+                font-size: 11px;
+                line-height: 15px;
+                font-weight: 600;
+            }
+        }
+        .more-info{
+            text-align: center;
+            @extend %clearfix;
+            a{
+                float: left;
+                width: 33.33%;
+            }
+            .info-value{
+                font-size: 14px;
+            }
+            .info-naem{
+                color: #999;
+                padding-top: 5px;
+            }
+        }
+        
+    }
+}

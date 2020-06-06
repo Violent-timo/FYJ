@@ -95,14 +95,17 @@
             }
         }
         padding: 12px 0 13px;
-        overflow: hidden;
+        // overflow: hidden;
         background: $killcolor;
         .list-wrap{
-            width: 100%;
+            width: 1210px;
             height: 225px;
             position: relative;
-            overflow: hidden;
+            // overflow: hidden;
             .slider{
+                &:hover{
+                    background: rgba(0,0,0,0.4);
+                }
                 display: none;
                 position: absolute;
                 cursor: pointer;
@@ -123,19 +126,24 @@
             }
         }
         .list{
-            
+            width: 1190px;
+            position: relative;
+            left: 10px;
+            overflow: hidden;
             ul{
                 position: relative;
-                left: -1px;
+                left: -10px;
+                // left: -1px;
                 height: 225px;
                 @extend %clearfix;
             }
             li{
                 float: left;
-                width: 170px;
+                width: 171px;
                 height: 225px;
-                padding: 0 15px;
+                padding: 0 14px;
                 border-left: 1px solid #e7e7e7;
+                margin: 0;
                 &:hover{
                     img{
                         transform: translateY(-5px);

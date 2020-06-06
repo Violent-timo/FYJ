@@ -3,10 +3,10 @@
     // const $phonebtn=$('.togbtn').children().last().children();
     // const $useform=$('.loginform');
     // const $phoneform=$('.mobileform');
-    const $togbtn=$('.togbtn').children()
-    const $togform=$('form')
-
-
+    const $togbtn=$('.togbtn').children();
+    const $togform=$('form');
+    const $err=$('.error');
+    console.log($err);
     //登录方式切换
     $togbtn.on('click',function(){
         $(this).children().addClass('active');
@@ -19,20 +19,20 @@
     })
 
     //用户名登录
-    const $suername=$('.loginform .user input');
+    const $username=$('.loginform .user input');
     const $password=$('.loginform .password input');
     const $loginbtn=$('.loginBtn');
 
     //用户名失去焦点判断 用户名是否存在
-    $suername.on('blur',function(){
+    $username.on('blur',function(){
         $.post('http://10.31.162.14/Zshoppro/php/login.php',{
             'username':$(this).val()},
             function (data) {
                 if(data==='1'){
-                    console.log('用户名存在');
+                    $err.css({display:'none'});
                 }else{
-                    
-                    $suername.val('');
+                    $err.css({display:'block'});
+                    $username.val('');
                 }
             });
       
@@ -40,13 +40,14 @@
 
     //点击登录 判断用户名密码是否匹配
     $loginbtn.on('click',function(){
-        if($suername.val()&&$password.val()){
+        if($username.val()&&$password.val()){
              $.post('http://10.31.162.14/Zshoppro/php/login.php',{
-            'username':$suername.val(),
+            'username':$username.val(),
             'password':$password.val()
         },
             function (data) {
                 if(data==='1'){
+                    $.cookie('username',$username.val());
                     alert('登录成功');
                     location.href='index.html';
                 }else{

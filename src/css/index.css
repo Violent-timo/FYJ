@@ -311,17 +311,15 @@ input[type=text] {
 }
 #seckill .kill-content {
   padding: 12px 0 13px;
-  overflow: hidden;
   background: #fff;
 }
 #seckill .kill-content:hover .slider {
   display: block !important;
 }
 #seckill .kill-content .list-wrap {
-  width: 100%;
+  width: 1210px;
   height: 225px;
   position: relative;
-  overflow: hidden;
 }
 #seckill .kill-content .list-wrap .slider {
   display: none;
@@ -339,20 +337,30 @@ input[type=text] {
   transform: translateY(-50%);
   color: #fff;
 }
+#seckill .kill-content .list-wrap .slider:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
 #seckill .kill-content .list-wrap .next {
   right: 0;
 }
+#seckill .kill-content .list {
+  width: 1190px;
+  position: relative;
+  left: 10px;
+  overflow: hidden;
+}
 #seckill .kill-content .list ul {
   position: relative;
-  left: -1px;
+  left: -10px;
   height: 225px;
 }
 #seckill .kill-content .list li {
   float: left;
-  width: 170px;
+  width: 171px;
   height: 225px;
-  padding: 0 15px;
+  padding: 0 14px;
   border-left: 1px solid #e7e7e7;
+  margin: 0;
 }
 #seckill .kill-content .list li:hover img {
   transform: translateY(-5px);
