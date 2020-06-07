@@ -103,24 +103,24 @@
         let ulleft=parseInt($skillshow.css('left'));
         let wrapwidth=$('.list-wrap').width();
         let shift=$skillshow.width()-Math.abs(ulleft)-wrapwidth+20;//可移动的距离
-        console.log(shift)
+        console.log(ulleft+'a')
         switch (compare){
             case "-":
-                if(shift>200){
+                if(shift>0){
                     if(shift>=1200){
                         $skillshow.animate({
-                            left:-6*200-10
+                            left:parseInt($skillshow.css('left'))-6*200
                         },function(){
+                            console.log($skillshow.css('left'))
                             block=true;
                         })
-                        console.log(block+'1')
                     }else{
                         $skillshow.animate({
-                            left:-shift-10
+                            left:parseInt($skillshow.css('left'))-shift
                         },function(){
+                            console.log($skillshow.css('left'))
                             block=true;
                         })
-                        console.log(block+'2')
                     }
                 }else{
                     block=true;
@@ -128,21 +128,20 @@
                 
                 break;
             case "+":
-                if(shift<=0){
-                    if(shift>wrapwidth){
+                if(ulleft<-10){
+                    if(ulleft<=-1210){
                         $skillshow.animate({
-                            left:6*200-10
+                            left:parseInt($skillshow.css('left'))+1200
                         },function(){
+                            console.log($skillshow.css('left'))
                             block=true;
                         })
-                        console.log(block+'3')
                     }else{
                         $skillshow.animate({
-                            left:shift-10
+                            left:parseInt($skillshow.css('left'))-ulleft-10
                         },function(){
                             block=true;
                         })
-                        console.log(block+'4')
                     }
                 }
                 else{
@@ -152,6 +151,7 @@
                 
         }
         
+        
     }
 
 
@@ -160,7 +160,7 @@
     const $m=$('.timer .m');
     const $s=$('.timer .s');
     setInterval(function(){
-        let date=+new Date('2020-06-07');
+        let date=+new Date('2020-06-08');
         let nowdate=+new Date();
         let dif=date-nowdate;
         var h = String(parseInt(dif/1000/60/60)%24).padStart(2,0);
