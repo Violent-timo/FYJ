@@ -21,7 +21,10 @@
         })
         $('.all-list .name span').css({
             color:'#fff',
-        })
+        });
+        const $searchbtn=$('.search-bar input[type="submit"]');
+        const $input=$('.search-bar input[type="text"]');
+        search($input,$searchbtn);
     });
     $('#toolbar').load('./toolbar.html');
 }();
@@ -57,29 +60,28 @@
 !function(){
     //渲染秒杀商品
     const $skillshow=$('#seckill ul');
-    console.log($skillshow)
-    $(document).ready(function(){
-        $.get('../php/indexskill.php',function(data){
-           
-            let res=JSON.parse(data);
-            $skillshow.css({width:res.length*200})
-            for(let i=0;i<res.length;i++){
-                var li=$('<li></li>');
-                li.html(`<div class="goods">
-                             <a href="javascript:;">
-                                 <img src="${res[i].url}" >
-                                 <p class="sk-name">${res[i].productname}</p>
-                             </a>
-                             <span class="sk-shadow"></span>
-                         </div>
-                         <p class="price">
-                             <span class="newprice">￥${res[i].newprice}</span>
-                             <span class="oldprice">￥${res[i].oldprice}</span>
-                         </p>`);
-               $skillshow.append(li);
-            }
-         })
-    })
+    
+    $.get('../php/indexskill.php',function(data){
+        
+        let res=JSON.parse(data);
+        $skillshow.css({width:res.length*200})
+        for(let i=0;i<res.length;i++){
+            var li=$('<li></li>');
+            li.html(`<div class="goods">
+                            <a href="javascript:;">
+                                <img src="${res[i].url}" >
+                                <p class="sk-name">${res[i].productname}</p>
+                            </a>
+                            <span class="sk-shadow"></span>
+                        </div>
+                        <p class="price">
+                            <span class="newprice">￥${res[i].newprice}</span>
+                            <span class="oldprice">￥${res[i].oldprice}</span>
+                        </p>`);
+            $skillshow.append(li);
+        }
+        })
+    
     
     //左右按钮事件
     const $prev=$('.prev');
@@ -88,14 +90,14 @@
     $prev.on('click',function(){
         if(block){
             block=false;
-            slider('-');
+            slider('+');
         }
       
     })
     $next.on('click',function(){
         if(block){
             block=false;
-            slider('+');
+            slider('-');
         }
         
      })
@@ -103,7 +105,8 @@
         let ulleft=parseInt($skillshow.css('left'));
         let wrapwidth=$('.list-wrap').width();
         let shift=$skillshow.width()-Math.abs(ulleft)-wrapwidth+20;//可移动的距离
-        console.log(ulleft+'a')
+       
+        console.log(shift)
         switch (compare){
             case "-":
                 if(shift>0){
@@ -118,7 +121,6 @@
                         $skillshow.animate({
                             left:parseInt($skillshow.css('left'))-shift
                         },function(){
-                            console.log($skillshow.css('left'))
                             block=true;
                         })
                     }
@@ -160,14 +162,65 @@
     const $m=$('.timer .m');
     const $s=$('.timer .s');
     setInterval(function(){
-        let date=+new Date('2020-06-08');
+        let date=+new Date('2020-06-08 13:26:00');
         let nowdate=+new Date();
         let dif=date-nowdate;
         var h = String(parseInt(dif/1000/60/60)%24).padStart(2,0);
         var m = String(parseInt(dif/1000/60)%60).padStart(2,0);
         var s = String(parseInt(dif/1000)%60).padStart(2,0);
-        $h.html(h);
-        $s.html(s);
-        $m.html(m);
+        if(dif<0){
+            $h.html('00');
+            $s.html('00');
+            $m.html('00');
+        }else{
+            $h.html(h);
+            $s.html(s);
+            $m.html(m);
+        }
+        
     },1000)
 }()
+
+
+//猜你喜欢
+!function(){
+    const $related=$('.relateditem ul');
+    $.get('../php/indexrelated.php ',function(data){
+        let res=JSON.parse(data);
+        for(let value of res){
+            let li=$('<li></li>');
+            li.html(`
+            <a href="javascript:;">
+                <div class="imgwrap">
+                    <img data-original="${value.url}" class="lazy">
+                </div>
+                
+                <div class="item-info">
+                    <p class="info-name">${value.title}
+                    </p>
+                    <p class="info-price">
+                    <span>￥</span><span class="price">${value.price}</span> 
+                    </p>
+                </div>
+            </a>
+
+            `);
+            $related.append(li);    
+        }
+        let $imgs=$('.lazy');
+        $imgs.lazyload({
+            effect: "fadeIn"
+        })
+    })
+}()
+
+
+//搜索
+function search($input,$btn){
+    if($input!==''){
+        $btn.on('click',function(){
+            $input.val();
+        })
+    }
+    
+}

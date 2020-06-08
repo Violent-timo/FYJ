@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/conn.css">
     <link rel="stylesheet" href="https://statics.cnrmall.com/web/static/toolkit/font-awesome/css/font-awesome.min.css">
     
-</head>
-<body>
+
    
 
     <div id="search">
@@ -21,9 +15,9 @@
             </h1>
             <div class="search-wrap">
                 <div class="search-bar">
-                    <form action="">
+                    <form action="../php/indexsearch.php" method="GET">
                         <span></span>
-                        <input type="text"  placeholder="防晒">
+                        <input type="text"  placeholder="防晒" name="key">
                         <input type="submit" value="搜索">
                     </form>
                 </div>
@@ -81,7 +75,7 @@
                                                 </a>
                                             </dt>
                                             <dd>
-                                                <a href="javascript:;">膨化糕饼</a>
+                                                <a href="list.html">膨化糕饼</a>
                                                 <a href="javascript:;">坚果炒货</a>
                                                 <a href="javascript:;">蜜饯糖果</a>
                                                 <a href="javascript:;">熟食肉干</a>
@@ -412,5 +406,3 @@
             </ul>
         </div>
     </nav>
-</body>
-</html>

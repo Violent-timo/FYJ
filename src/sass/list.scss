@@ -40,6 +40,7 @@ body{
         li{
             float: left;
             a{
+                
                 display: block;
                 height: 23px;
                 padding: 0 9px;
@@ -50,7 +51,7 @@ body{
                 color: #333;
             }
         }
-        .default a{
+        .a-active {
             border-color: #f30213;
             background-color: #f30213;
             color: #FFF;

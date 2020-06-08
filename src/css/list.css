@@ -51,7 +51,7 @@ body {
   line-height: 23px;
   color: #333;
 }
-#sort-bar .array .default a {
+#sort-bar .array .a-active {
   border-color: #f30213;
   background-color: #f30213;
   color: #FFF;
