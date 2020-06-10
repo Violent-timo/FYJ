@@ -187,6 +187,7 @@ body {
   background: #FFF;
 }
 #main .things {
+  display: none;
   position: relative;
   padding: 20px 19px 25px 19px;
   border-style: solid;

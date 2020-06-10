@@ -2,13 +2,6 @@
 !function(){
     $('#head').load("./connhead.html",function(){
         $('.back-home').css({display:'none'})
-
-        //判断用户是否登录
-        if($.cookie('username')){
-            $('.unuse').css({display:'none'});
-            $('.use').css({display:'block'});
-            $('.use span').html($.cookie('username'))
-        }
     })
     $('#wrap').load("./conn.html",function(){
         $('.all-list').css({
@@ -26,7 +19,12 @@
         const $input=$('.search-bar input[type="text"]');
         search($input,$searchbtn);
     });
-    $('#toolbar').load('./toolbar.html');
+    $('#toolbar').load('./toolbar.html',function(){
+         //判断用户是否登录
+         if($.cookie('username')){ 
+            $('.info .name').html($.cookie('username'));
+        }
+    });
 }();
 
 
@@ -65,21 +63,21 @@
         
         let res=JSON.parse(data);
         $skillshow.css({width:res.length*200})
+        let str=''
         for(let i=0;i<res.length;i++){
-            var li=$('<li></li>');
-            li.html(`<div class="goods">
-                            <a href="javascript:;">
-                                <img src="${res[i].url}" >
-                                <p class="sk-name">${res[i].productname}</p>
-                            </a>
-                            <span class="sk-shadow"></span>
-                        </div>
-                        <p class="price">
-                            <span class="newprice">￥${res[i].newprice}</span>
-                            <span class="oldprice">￥${res[i].oldprice}</span>
-                        </p>`);
-            $skillshow.append(li);
-        }
+            str+=`<li><div class="goods">
+            <a href="javascript:;">
+                <img src="${res[i].url}" >
+                <p class="sk-name">${res[i].productname}</p>
+                     </a>
+                <span class="sk-shadow"></span>
+                </div>
+                <p class="price">
+                    <span class="newprice">￥${res[i].newprice}</span>
+                    <span class="oldprice">￥${res[i].oldprice}</span>
+                </p></li>`
+            }
+            $skillshow.html(str);
         })
     
     
@@ -187,9 +185,9 @@
     const $related=$('.relateditem ul');
     $.get('../php/indexrelated.php ',function(data){
         let res=JSON.parse(data);
+        let str=''
         for(let value of res){
-            let li=$('<li></li>');
-            li.html(`
+            str+=`<li>
             <a href="javascript:;">
                 <div class="imgwrap">
                     <img data-original="${value.url}" class="lazy">
@@ -203,10 +201,11 @@
                     </p>
                 </div>
             </a>
-
-            `);
-            $related.append(li);    
+            </li>
+            `
+              
         }
+        $related.html(str); 
         let $imgs=$('.lazy');
         $imgs.lazyload({
             effect: "fadeIn"
@@ -224,3 +223,5 @@ function search($input,$btn){
     }
     
 }
+
+

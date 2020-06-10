@@ -45,23 +45,27 @@ input[type=text] {
   height: 360px;
 }
 #detail .gods-pic .smallshade {
+  display: none;
   position: absolute;
+  left: 0;
+  top: 0;
   width: 180px;
   height: 180px;
   background: #ffffff;
   opacity: 0.7;
 }
 #detail .gods-pic .bigshade {
-  width: 360px;
-  height: 360px;
+  width: 450px;
+  height: 450px;
   background-color: red;
   position: absolute;
   left: 380px;
   top: 0;
   z-index: 10;
-  background: url("../imgs/list.jpg") no-repeat;
+  background: url() no-repeat;
   background-size: 720px 720px;
   background-position: 0px 0px;
+  display: none;
 }
 #detail .gods-pic .controll {
   position: absolute;
@@ -70,6 +74,66 @@ input[type=text] {
   width: 360px;
   height: 56px;
   margin: 10px auto 0 auto;
+}
+#detail .gods-pic .controll .fa {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+#detail .gods-pic .controll .fa::before {
+  content: "";
+}
+#detail .gods-pic .controll a {
+  float: left;
+  visibility: hidden;
+  top: 0;
+  height: 54px;
+  width: 18px;
+  padding: 0;
+  border: solid 1px #FFF;
+  border-radius: 2px;
+  background-color: #FFF;
+  text-align: center;
+  font-size: 18px;
+  line-height: 56px;
+  color: #AAA;
+}
+#detail .gods-pic .controll a:hover {
+  background-color: #FAFAFA;
+  color: #e4393c;
+  border-color: #F1F1F1;
+}
+#detail .gods-pic .controll .prev {
+  margin-left: 5px;
+}
+#detail .gods-pic .controll .prev .fa::before {
+  content: "";
+}
+#detail .gods-pic .controll .goods-smallpic {
+  float: left;
+  margin-left: 5px;
+  width: 305px;
+  height: 56px;
+  overflow: hidden;
+}
+#detail .gods-pic .controll .goods-smallpic ul::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#detail .gods-pic .controll .goods-smallpic li {
+  float: left;
+  width: 56px;
+  height: 56px;
+  margin-right: 5px;
+}
+#detail .gods-pic .controll .goods-smallpic .active img {
+  border-color: #e4393c;
+}
+#detail .gods-pic .controll .goods-smallpic img {
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  border: solid 1px #F5F5F5;
+  cursor: pointer;
 }
 #detail .gods-pic .handle {
   position: absolute;

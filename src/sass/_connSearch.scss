@@ -111,10 +111,11 @@
             background: url('../imgs/web_common_pic.png') no-repeat 0 -30px;
         }
         .count{
+            display: none;
             position: absolute;
             top: 7px;
             left: 105px;
-            display: inline-block;
+            
             width: 14px;
             padding: 1px;
             letter-spacing: -1px;

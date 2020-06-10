@@ -47,7 +47,7 @@
         },
             function (data) {
                 if(data==='1'){
-                    $.cookie('username',$username.val());
+                    $.cookie('username',$username.val(),{path:'/'});
                     alert('登录成功');
                     location.href='index.html';
                 }else{

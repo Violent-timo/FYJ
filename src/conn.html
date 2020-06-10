@@ -42,7 +42,7 @@
             <div class="mycart">
                 <div class="title">
                     <i class="icon"></i>
-                    <i class="count">1</i>
+                    <i class="count"></i>
                     <a href="javascript:;">我的购物车</a>
                 </div>
             </div>
@@ -406,3 +406,18 @@
             </ul>
         </div>
     </nav>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script>
+       !function(){
+        const $count=$('.mycart .count')
+        if($.cookie('username')){
+            $count.css({display:'block'});
+            if(localStorage.getItem('goodsid')){
+                $count.html(localStorage.getItem('goodsid').split(',').length);
+            }else{
+                $count.html('0');
+            }
+        }
+       }()
+    </script>
