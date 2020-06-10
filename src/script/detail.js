@@ -1,12 +1,6 @@
 //引入公共结构
 !function(){
-    $('#head').load('./connhead.html',function(){
-        if($.cookie('username')){
-            console.log(666)
-            $('.unuse').css({display:'none'});
-            $('.use').css({display:'block'});
-         }
-    });
+    $('#head').load('./connhead.html');
     $('#wrap').load("./conn.html");
     
 }()
@@ -162,41 +156,108 @@
 
 
 //加入购物车
-!function(){
+!function($){
     const $addcar=$('.addbtn');
     let idlist=[]; 
     let numlist=[];
-   
+    const $count=$('#count');
+    const $countplus=$('.num .add');
+    const $countreduce=$('.num .reduce');
+    const $inventory =$('.inventory span');
+    let username;
     function localtoarray(){
-        if (localStorage.getItem('goodsid') && localStorage.getItem('goodsnum')) {
-            idlist =localStorage.getItem('goodsid').split(','); 
-            numlist = localStorage.getItem('goodsnum').split(','); 
+        username=$.cookie('username');
+        if (localStorage.getItem(username+'goodsid') && localStorage.getItem(username+'goodsnum')) {
+            idlist =localStorage.getItem(username+'goodsid').split(','); 
+            numlist = localStorage.getItem(username+'goodsnum').split(','); 
         } else {
             idlist = [];
             numlist = [];
         }
     }
 
-    $addcar.on('click',function(){
+    //数量加减
+    
+    $count.on('change',function(){
+        if($inventory.text()!==''){
+            if($count.val()==1){
+                $countreduce.addClass('disable');
+            }else{
+                $countreduce.removeClass('disable');
+            }
+            if($(this).val()>=~~$inventory.text()){
+                $(this).val($inventory.text());
+                $countplus.addClass('disable');
+            }else{
+                $countplus.removeClass('disable');
+            }
+        }
+        
+    })
+    
+    $countreduce.on('click',function(){
+        console.log($inventory.text());
+        if($inventory.text()!==''){
+            if($count.val()==1){
+                $countreduce.addClass('disable');
+            }else{
+                $countreduce.removeClass('disable');
+            }
+    
+            if($count.val()<=1){
+                $count.val(1);
+            }else{
+                $count.val($count.val()-1);
+            }
+    
+            if(~~$count.val()<$inventory.text()){
+                $countplus.removeClass('disable');
+            }
+        }
+    })
+
+    $countplus.on('click',function(){
+        if($inventory.text()!==''){
+            if(~~$count.val()<$inventory.text()){
+                $count.val(~~$count.val()+1);
+            }else{
+                $count.val($inventory.text());
+                $countplus.addClass('disable');
+            }
+            
+            if($count.val()!==1){
+                $countreduce.removeClass('disable');
+            };
+        }
+        
+    })
+    //加入购物车按钮
+    
+    $('.addbtn').on('click',function(){
+        if(!$.cookie('username')){
+            alert('请先登录用户');
+            return;
+        } 
+       
         let sid=location.search.substring(1).split('=')[1];
         let index=$.inArray(sid, idlist);
         localtoarray();
         if ($.inArray(sid, idlist) !== -1){
-            let count=parseInt(numlist[index])+parseInt($('#count').val());
+            let count=parseInt(numlist[index])+parseInt($count.val());
             numlist[index] = count;
-            localStorage.setItem('goodsnum',numlist);
+            localStorage.setItem(username+'goodsnum',numlist);
         } else{
             idlist.push(sid);
-            localStorage.setItem('goodsid',idlist);
-            numlist.push($('#count').val());
-            localStorage.setItem("goodsnum",numlist);
+            localStorage.setItem(username+'goodsid',idlist);
+            numlist.push($count.val());
+            localStorage.setItem(username+"goodsnum",numlist);
         }
+
+        $('.mycart .count').html(localStorage.getItem(username+'goodsid').split(',').length);
         alert('加入成功');
-        location.href='shoppingcar.html';
+        
        
     })
-
-
     
-}()
+}(jQuery)
 

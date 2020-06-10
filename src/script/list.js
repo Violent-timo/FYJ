@@ -214,71 +214,108 @@
 
 }(jQuery);
 
+
+
+
+//加入购物车
+// !function($){
+//     let idlist=[]; 
+//     let numlist=[];
+//     function localtoarray(){
+//         username=$.cookie('username');
+//         if (localStorage.getItem(username+'goodsid') && localStorage.getItem(username+'goodsnum')) {
+//             idlist =localStorage.getItem(username+'goodsid').split(','); 
+//             numlist = localStorage.getItem(username+'goodsnum').split(','); 
+//         } else {
+//             idlist = [];
+//             numlist = [];
+//         }
+//     }
+// $addcar.on('click',function(){
+//         let sid=location.search.substring(1).split('=')[1];
+//         let index=$.inArray(sid, idlist);
+//         localtoarray();
+//         if ($.inArray(sid, idlist) !== -1){
+//             let count=parseInt(numlist[index]+1);
+//             numlist[index] = count;
+//             localStorage.setItem(username+'goodsnum',numlist);
+//         } else{
+//             idlist.push(sid);
+//             localStorage.setItem(username+'goodsid',idlist);
+//             numlist.push('1');
+//             localStorage.setItem(username+"goodsnum",numlist);
+//         }
+
+//         $('.mycart .count').html(localStorage.getItem(username+'goodsid').split(',').length);
+//         alert('加入成功');
+       
+//     })
+// }(jQuery)
 //渲染首页搜索的关键词
-!function(){
-    let keyword= decodeURIComponent(location.search.substring(1).split('=')[1]); //解决乱码
-    const list_wrap=$('ul.list-wrap');
+// !function(){
+//     let keyword= decodeURIComponent(location.search.substring(1).split('=')[1]); //解决乱码
+//     const list_wrap=$('ul.list-wrap');
 
-    $.post('../php/indexsearch.php',{keyword:keyword},function(data){
-        let res=JSON.parse(data);
-        let str='';
-        $.each(res,function(index,value){
-            str+=`<li>
-            <div class="goods-content">
-                <div class="goods-pic">
-                    <a href="javascript:;"><img class='lazy' data-original="${value.goods_img} "></a>
-                </div>
-                <div class="goods-info">
-                    <div class="p-price">
-                        <p><span>￥</span><span class='now-price'>${value.goods_price}</span><i>限时折扣</i></p>
-                    </div>
-                    <div class="p-name">
-                        <a href="javascript:;">
+//     $.post('../php/indexsearch.php',{keyword:keyword},function(data){
+//         let res=JSON.parse(data);
+//         let str='';
+//         $.each(res,function(index,value){
+//             str+=`<li>
+//             <div class="goods-content">
+//                 <div class="goods-pic">
+//                     <a href="javascript:;"><img class='lazy' data-original="${value.goods_img} "></a>
+//                 </div>
+//                 <div class="goods-info">
+//                     <div class="p-price">
+//                         <p><span>￥</span><span class='now-price'>${value.goods_price}</span><i>限时折扣</i></p>
+//                     </div>
+//                     <div class="p-name">
+//                         <a href="javascript:;">
                             
-                            <p>${value.goods_name}</p>
-                        </a>
-                    </div>
-                    <div class="p-commit">
-                        <strong class="sell">
-                            <a href="javascript:;">${value.goods_number}</a>
-                            笔成交
-                        </strong>
-                        <strong class="remark">
-                            <a href="javascript:;">0</a>
-                            评论
-                        </strong>
-                    </div>
-                    <div class="p-shop">
-                        <span>
-                            <a href="javascript:;">${value.goods_state}</a>
-                        </span>
-                    </div>
-                    <div class="p-icons">
-                        <i>自营</i>
-                    </div>
-                    <div class="p-operate">
-                        <div class="btn focus">
-                            <a href="javascript:;">收藏
-                                <i></i>
+//                             <p>${value.goods_name}</p>
+//                         </a>
+//                     </div>
+//                     <div class="p-commit">
+//                         <strong class="sell">
+//                             <a href="javascript:;">${value.goods_number}</a>
+//                             笔成交
+//                         </strong>
+//                         <strong class="remark">
+//                             <a href="javascript:;">0</a>
+//                             评论
+//                         </strong>
+//                     </div>
+//                     <div class="p-shop">
+//                         <span>
+//                             <a href="javascript:;">${value.goods_state}</a>
+//                         </span>
+//                     </div>
+//                     <div class="p-icons">
+//                         <i>自营</i>
+//                     </div>
+//                     <div class="p-operate">
+//                         <div class="btn focus">
+//                             <a href="javascript:;">收藏
+//                                 <i></i>
 
-                            </a>
-                            <a href="javascript:;" class="active">
-                                <span></span>
-                            </a>
-                        </div>
-                        <div class="btn addcar">
-                            <a href="javascript:;">加入购物车
-                                <i></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div></li>
-        `
-        })
-        $('.list-wrap').append(str);
-    }) 
-}()
+//                             </a>
+//                             <a href="javascript:;" class="active">
+//                                 <span></span>
+//                             </a>
+//                         </div>
+//                         <div class="btn addcar">
+//                             <a href="javascript:;">加入购物车
+//                                 <i></i>
+//                             </a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div></li>
+//         `
+//         })
+//         $('.list-wrap').append(str);
+//     }) 
+// }()
 
 
 

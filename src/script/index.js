@@ -181,7 +181,7 @@
 
 
 //猜你喜欢
-!function(){
+!function($){
     const $related=$('.relateditem ul');
     $.get('../php/indexrelated.php ',function(data){
         let res=JSON.parse(data);
@@ -205,13 +205,13 @@
             `
               
         }
-        $related.html(str); 
-        let $imgs=$('.lazy');
-        $imgs.lazyload({
-            effect: "fadeIn"
-        })
+            $related.html(str); 
+            let $imgs=$('.lazy');
+            $imgs.lazyload({
+                effect: "fadeIn"
+            })
     })
-}()
+}(jQuery)
 
 
 //搜索

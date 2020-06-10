@@ -91,3 +91,17 @@
     </header>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script>
+         !function($){
+            $('.exit').on('click',function(){
+             console.log(66)
+            $.removeCookie('username',{path:'/'});
+            location.href='login.html';
+            })
+            if($.cookie('username')){
+                $('.unuse').css({display:'none'});
+                $('.use').css({display:'block'});
+                $('.use span').html($.cookie('username'));  
+            }
+         }(jQuery)
+    </script>

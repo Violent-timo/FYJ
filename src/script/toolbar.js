@@ -1,5 +1,5 @@
 ///tab切换
-!function(){
+!function($){
     const toolbar=document.querySelector(".toolbar");
     const btnlist=toolbar.querySelectorAll('ul li');
     const btnlist_tlt=toolbar.querySelectorAll('ul li em');
@@ -35,11 +35,11 @@
     
     
 
-}()
+}(jQuery)
 
 
 //回到顶部
-!function(){
+!function($){
     $('.totop').on('click',function(){
       
         let scrollTop=$(document).scrollTop();
@@ -50,18 +50,5 @@
             }
         },1000/60)
     })
-}()
+}(jQuery)
 
-//cookie相关
-!function(){
-    $('.exit').on('click',function(){
-        $.removeCookie('username',{path:'/'});
-        location.href='login.html';
-    })
-
-    if($.cookie('username')){
-        $('.unuse').css({display:'none'});
-        $('.use').css({display:'block'});
-        $('.use span').html($.cookie('username'));  
-    }
-}()

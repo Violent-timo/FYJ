@@ -336,6 +336,12 @@ input[type=text] {
 #detail .indetail .key .num {
   float: left;
 }
+#detail .indetail .key .num .disable {
+  cursor: not-allowed !important;
+}
+#detail .indetail .key .num .disable i {
+  color: #C1C1C1 !important;
+}
 #detail .indetail .key .tognum {
   position: relative;
   display: block;
@@ -348,18 +354,16 @@ input[type=text] {
   line-height: 28px;
   cursor: pointer;
 }
-#detail .indetail .key .reduce {
-  background-color: #FAFAFA;
-  border-color: #E1E1E1;
-  cursor: not-allowed;
-}
 #detail .indetail .key i {
   display: block;
   margin: 8px auto;
-  color: #C1C1C1;
+  color: black;
 }
 #detail .indetail .key i::before {
   content: "";
+}
+#detail .indetail .key .add i::before {
+  content: "";
 }
 #detail .indetail .key input {
   position: relative;
@@ -371,12 +375,6 @@ input[type=text] {
   padding: 4px;
   border: solid 1px #E1E1E1;
   line-height: 20px;
-}
-#detail .indetail .key .add i {
-  color: #000;
-}
-#detail .indetail .key .add i::before {
-  content: "";
 }
 #detail .indetail .key .unit {
   margin-left: 5px;

@@ -250,6 +250,9 @@ body{
                     border-radius: 3px 0 0 3px;
                     background-color: #FAFAFA;
                     line-height: 24px;
+                    i{
+                        color: #000;
+                    }
                 }
                 input{
                     float: left;
@@ -262,19 +265,24 @@ body{
                     border: solid 1px #E1E1E1;
                     line-height: 20px;
                 }
-                .reduce{
+                .ban{
                     cursor: not-allowed;
+                    i{
+                        color: #C1C1C1;
+                    }
+                }
+                .reduce {
                     .fa::before{
                         content: "\f068";
                     }
                 }
                 .add i{
-                    color: #000;
+                    &::before{
+                        content: "\f067";
+                    }
+                    
                 } 
-                .add .fa::before{
-                    content: "\f067";
-                }
-               
+                
            }
         }
         .thing-price{

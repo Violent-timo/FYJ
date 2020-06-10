@@ -243,6 +243,9 @@ body {
   background-color: #FAFAFA;
   line-height: 24px;
 }
+#main .things .thing-main .numtog a i {
+  color: #000;
+}
 #main .things .thing-main .numtog input {
   float: left;
   display: block;
@@ -254,16 +257,16 @@ body {
   border: solid 1px #E1E1E1;
   line-height: 20px;
 }
-#main .things .thing-main .numtog .reduce {
+#main .things .thing-main .numtog .ban {
   cursor: not-allowed;
+}
+#main .things .thing-main .numtog .ban i {
+  color: #C1C1C1;
 }
 #main .things .thing-main .numtog .reduce .fa::before {
   content: "";
 }
-#main .things .thing-main .numtog .add i {
-  color: #000;
-}
-#main .things .thing-main .numtog .add .fa::before {
+#main .things .thing-main .numtog .add i::before {
   content: "";
 }
 #main .things .thing-price {

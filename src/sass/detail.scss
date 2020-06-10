@@ -347,6 +347,12 @@ input[type='text']{
             padding-top: 10px;
             .num{
                 float: left;
+                .disable{
+                    cursor:not-allowed !important;
+                    i{
+                        color: #C1C1C1 !important;
+                    }
+                }
             }
             .tognum{
                 position: relative;
@@ -359,20 +365,25 @@ input[type='text']{
                 background-color: #FAFAFA;
                 line-height: 28px;
                 cursor: pointer;
+               
             }
-            .reduce{
-                background-color: #FAFAFA;
-                border-color: #E1E1E1;
-                cursor: not-allowed;
-                
-            }
+            
             i{
                 display: block;
-                margin:  8px auto;
-                color: #C1C1C1;
+                margin:  8px auto; 
+                color: rgb(0, 0, 0);
+                // color: #C1C1C1;
                 &::before{
                     content: "\f068";
                 }
+            }
+            .add{
+                i{
+                  &::before{
+                        content: "\f067";
+                    }
+                }
+                
             }
             input{
                 position: relative;
@@ -385,15 +396,7 @@ input[type='text']{
                 border: solid 1px #E1E1E1;
                 line-height: 20px;
             }
-            .add{
-                i{
-                    color: #000;
-                    &::before{
-                        content: "\f067";
-                    }
-                }
-                
-            }
+            
             .unit{
                 margin-left: 5px;
             }
