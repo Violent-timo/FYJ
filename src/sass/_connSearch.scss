@@ -33,11 +33,24 @@
         position: relative;
     }
     .searchshow{
-        width: 100%;
+        width: 548px;
         background-color: #fff;
         position: absolute;
         left: 0;
         top: 36px;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-top: none;
+        display: none;
+        li{
+            &:hover{
+                background-color: rgba(0,0,0,.09);
+            }
+            color:rgba(0,0,0,0.5); 
+            font-size: 14px;
+            cursor: pointer;
+            padding-left: 10px;
+            line-height: 30px; ;
+        }
     }
     form{
         display: block;

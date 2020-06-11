@@ -17,7 +17,7 @@
                 <div class="search-bar">
                     <form action="../php/indexsearch.php" method="GET">
                         <span></span>
-                        <input type="text"  placeholder="防晒" name="key">
+                        <input autocomplete="off"  type="text"  placeholder="防晒" name="key">
                         <input type="submit" value="搜索">
                     </form>
                    <ul class="searchshow"></ul>
@@ -1246,30 +1246,56 @@
             }
         })
       
+          //二级菜单
+        !function($){
+            const $menuli = $('.list-menu li');
+            $menuli.on('mouseover',function(){
+            
+            const $part= $(this).find('.part');
+            $(document).on('scroll',function(){
+                if($(window).scrollTop()>($menuli.offset().top-19)){
+                    $part.css({
+                        top:($(window).scrollTop()-$menuli.offset().top+19)
+                    })
+                }else{
+                    $part.css({
+                        top:0
+                    })
+                }
+            })
+            
+         })
+        }(jQuery)
+
+
+        //jsonp 接口
+       !function($){
         
 
-       !function($){
-            // const $searchinput=$('.search-bar form input[type="text"]');
-            // const $ul=$('.search-bar .searchshow');
-
-            let text=document.querySelector('.search-bar form input[type="text"]');
-            let ul=document.querySelector('.search-bar .searchshow');
-
+            const $text=$('.search-bar form input[type="text"]');
+            const $ul=$('.search-bar .searchshow');
+            // console.log(text,ul);
             function getlist(data){
-                ul.innerHTML='';
+                $ul[0].innerHTML='';
                 for(var i=0;i<data.result.length;i++){
-                    let li=document.createElement('li');
-                    li.innerText=data.result[i][0];
-                    ul.appendChild(li);
+                    let $li=$('<li>');
+                    $li.html(data.result[i][0]);
+                    $ul.append($li);
                 }
             
             }
             
-            text.oninput=function(){
-                let scr=document.createElement('script');
-                scr.src='https://suggest.taobao.com/sug?code=utf-8&q='+text.value+'&_ksTS=1589723848122_399&callback=getlist&k=1&area=c2c&bucketid=16';
-                document.body.appendChild(scr);
-            }
-           
+            $text.on("input",function(){
+                $ul.css({display:'block'});
+                let $scr=$('<script>');
+                $scr.attr('src','https://suggest.taobao.com/sug?code=utf-8&q='+$text.val()+'&_ksTS=1589723848122_399&callback=getlist&k=1&area=c2c&bucketid=16');
+                $('body').append($scr);
+            })
+            $text.on("blur",function(){
+                $ul.css({display:'none'});
+            })
+                
+            
+           window.getlist=getlist;
        }(jQuery)
     </script>

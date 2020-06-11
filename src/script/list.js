@@ -67,7 +67,11 @@
                 }).done(function (data) {
                     $.each(data, function (index, value) {
                     
-                    render(value);
+                        render(value);
+                        let $imgs=$('.lazy');
+                        $imgs.lazyload({
+                            effect: "fadeIn"
+                        })
                     });
 
                     array_default = [];//排序前的li数组
@@ -205,53 +209,13 @@
                 </div>
             `);
             $list.append(li);
-            let $imgs=$('.lazy');
-            $imgs.lazyload({
-                effect: "fadeIn"
-            })
+            
         }
-    
+        window.render=render;
     }
 
 }(jQuery);
 
-
-
-
-//加入购物车
-// !function($){
-//     let idlist=[]; 
-//     let numlist=[];
-//     function localtoarray(){
-//         username=$.cookie('username');
-//         if (localStorage.getItem(username+'goodsid') && localStorage.getItem(username+'goodsnum')) {
-//             idlist =localStorage.getItem(username+'goodsid').split(','); 
-//             numlist = localStorage.getItem(username+'goodsnum').split(','); 
-//         } else {
-//             idlist = [];
-//             numlist = [];
-//         }
-//     }
-// $addcar.on('click',function(){
-//         let sid=location.search.substring(1).split('=')[1];
-//         let index=$.inArray(sid, idlist);
-//         localtoarray();
-//         if ($.inArray(sid, idlist) !== -1){
-//             let count=parseInt(numlist[index]+1);
-//             numlist[index] = count;
-//             localStorage.setItem(username+'goodsnum',numlist);
-//         } else{
-//             idlist.push(sid);
-//             localStorage.setItem(username+'goodsid',idlist);
-//             numlist.push('1');
-//             localStorage.setItem(username+"goodsnum",numlist);
-//         }
-
-//         $('.mycart .count').html(localStorage.getItem(username+'goodsid').split(',').length);
-//         alert('加入成功');
-       
-//     })
-// }(jQuery)
 //渲染首页搜索的关键词
 !function($){
     let keyword= decodeURIComponent(location.search.substring(1).split('=')[1]); //解决乱码
@@ -264,7 +228,7 @@
             str+=`<li>
             <div class="goods-content">
                 <div class="goods-pic">
-                    <a href="javascript:;"><img class='lazy' data-original="${value.goods_img} "></a>
+                <a href="detail.html?sid=${value.id}"><img class='lazy' data-original="${value.goods_img} "></a>
                 </div>
                 <div class="goods-info">
                     <div class="p-price">
@@ -324,7 +288,40 @@
 
 
 
+//加入购物车
+// !function($){
+//     let idlist=[]; 
+//     let numlist=[];
+//     function localtoarray(){
+//         username=$.cookie('username');
+//         if (localStorage.getItem(username+'goodsid') && localStorage.getItem(username+'goodsnum')) {
+//             idlist =localStorage.getItem(username+'goodsid').split(','); 
+//             numlist = localStorage.getItem(username+'goodsnum').split(','); 
+//         } else {
+//             idlist = [];
+//             numlist = [];
+//         }
+//     }
+// $addcar.on('click',function(){
+//         let sid=location.search.substring(1).split('=')[1];
+//         let index=$.inArray(sid, idlist);
+//         localtoarray();
+//         if ($.inArray(sid, idlist) !== -1){
+//             let count=parseInt(numlist[index]+1);
+//             numlist[index] = count;
+//             localStorage.setItem(username+'goodsnum',numlist);
+//         } else{
+//             idlist.push(sid);
+//             localStorage.setItem(username+'goodsid',idlist);
+//             numlist.push('1');
+//             localStorage.setItem(username+"goodsnum",numlist);
+//         }
 
+//         $('.mycart .count').html(localStorage.getItem(username+'goodsid').split(',').length);
+//         alert('加入成功');
+       
+//     })
+// }(jQuery)
 
 
 

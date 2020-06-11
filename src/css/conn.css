@@ -74,11 +74,24 @@ input[type=text] {
   position: relative;
 }
 #search .searchshow {
-  width: 100%;
+  width: 548px;
   background-color: #fff;
   position: absolute;
   left: 0;
   top: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  display: none;
+}
+#search .searchshow li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  cursor: pointer;
+  padding-left: 10px;
+  line-height: 30px;
+}
+#search .searchshow li:hover {
+  background-color: rgba(0, 0, 0, 0.09);
 }
 #search form {
   display: block;
@@ -261,6 +274,7 @@ nav .all-goods .part {
   border-top: 0;
   background-color: #f7f7f7;
   box-shadow: 1px 4px 0 rgba(0, 0, 0, 0.05);
+  transition: top 0.25s ease;
 }
 nav .all-goods .partleft {
   float: left;

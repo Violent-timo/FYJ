@@ -44,7 +44,6 @@ input[type=text] {
 #banner {
   width: 100%;
   height: 479px;
-  background-color: #F5F5F5;
 }
 #banner .container {
   background-color: #fff;
@@ -851,6 +850,10 @@ input[type=text] {
 #related .relateditem .info-price {
   font-size: 12px;
   color: #f10214;
+}
+
+body {
+  background-color: #F5F5F5 !important;
 }
 
 /*# sourceMappingURL=index.css.map */

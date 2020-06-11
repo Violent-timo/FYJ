@@ -15,7 +15,7 @@
         $('.all-list .name span').css({
             color:'#fff',
         });
-        
+      
     });
     $('#toolbar').load('./toolbar.html',function(){
          //判断用户是否登录
@@ -264,7 +264,12 @@
 }(jQuery)
 
 
-// //搜索
-
+//楼梯效果
+!function(){
+    
+    // $(document).on('scroll',function(e){
+    //     console.log($(window).scrollTop())
+    // })
+}()
 
 

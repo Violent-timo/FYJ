@@ -6,44 +6,46 @@
 
 //加载购物车
 !function($){
-    let username=$.cookie('username');
-    const id=localStorage.getItem(username+"goodsid");
-    const count=localStorage.getItem(username+'goodsnum').split(',');
-    if(id&&count){
-        $.post('../php/shoppingcar.php',{id:id},function(data){
-            let res=JSON.parse(data);
-            // console.log(res);
-            for(let i=0;i<res.length;i++){
-                let $clonebox=$('.things:hidden').clone(true,true);
-                $clonebox.find('.thing-img img').attr('src',res[i].goods_img);
-                $clonebox.find('.name').html(res[i].goods_name);
-                $clonebox.find('.thing-price span').html(res[i].goods_price);
-                $clonebox.find('.money span').html(res[i].goods_price).attr({unitprice:res[i].goods_price});
-                $clonebox.find('.numtog input').val(count[i]);
-                $clonebox.find('.numtog .reduce').attr({id:res[i].id});
-                $clonebox.find('.numtog .add').attr({id:res[i].id});
-                $clonebox.find('.removeself').attr({id:res[i].id});
-                $clonebox.css('display', 'block');
-                $('.buy-list').append($clonebox);
-            }
-    
-            //判断数量按钮默认状态
-            let $shownum=$('.things:visible').find('.numtog input');
-            let $numreduce=$('.things:visible').find('.numtog .reduce');
-    
-            let $money=$('.things:visible').find('.money span');//钱
-            $.each($shownum,function(index,value){
-                // console.log($shownum.eq(index).val(),$money.attr('unitprice'));
-                $money.eq(index).html(($shownum.eq(index).val()*$money.eq(index).attr('unitprice')).toFixed(2));
-                if(value.value>1){
-                    $($numreduce[index]).removeClass('ban');
-                   
+    if(localStorage.getItem($.cookie('username')+"goodsid")){
+        let username=$.cookie('username');
+        const id=localStorage.getItem(username+"goodsid");
+        const count=localStorage.getItem(username+'goodsnum').split(',');
+        if(id&&count){
+            $.post('../php/shoppingcar.php',{id:id},function(data){
+                let res=JSON.parse(data);
+                // console.log(res);
+                for(let i=0;i<res.length;i++){
+                    let $clonebox=$('.things:hidden').clone(true,true);
+                    $clonebox.find('.thing-img img').attr('src',res[i].goods_img);
+                    $clonebox.find('.name').html(res[i].goods_name);
+                    $clonebox.find('.thing-price span').html(res[i].goods_price);
+                    $clonebox.find('.money span').html(res[i].goods_price).attr({unitprice:res[i].goods_price});
+                    $clonebox.find('.numtog input').val(count[i]).attr({id:res[i].id});
+                    $clonebox.find('.numtog .reduce').attr({id:res[i].id});
+                    $clonebox.find('.numtog .add').attr({id:res[i].id});
+                    $clonebox.find('.removeself').attr({id:res[i].id});
+                    $clonebox.css('display', 'block');
+                    $('.buy-list').append($clonebox);
                 }
+        
+                //判断数量按钮默认状态
+                let $shownum=$('.things:visible').find('.numtog input');
+                let $numreduce=$('.things:visible').find('.numtog .reduce');
+        
+                let $money=$('.things:visible').find('.money span');//钱
+                $.each($shownum,function(index,value){
+                    // console.log($shownum.eq(index).val(),$money.attr('unitprice'));
+                    $money.eq(index).html(($shownum.eq(index).val()*$money.eq(index).attr('unitprice')).toFixed(2));
+                    if(value.value>1){
+                        $($numreduce[index]).removeClass('ban');
+                    
+                    }
+                })
+        
             })
-            //钱
-    
-        })
+        }
     }
+    
 }(jQuery)
 
 //购物车局部功能
@@ -120,7 +122,7 @@
         if(Number($shownum.eq($index).val())>1){
             localStorageHandle($(this),'-');
             $shownum.eq($index).val($shownum.eq($index).val()-1);
-            
+            $('.things:visible .numtog .add').eq($index).removeClass('ban')
         }else{
             $(this).addClass('ban')
             $shownum.eq($index).val('1');
@@ -148,7 +150,24 @@
             
         
     })
-   
+   //商品input输入数量
+   $buywrap.on('blur',".numtog input",function(){
+       
+        let $money=$('.things:visible').find('.money span');
+        let $index=$('.things:visible .numtog input').index($(this)); 
+        if($(this).val()<=1){
+            $(this).val(1);
+            $('.things:visible .reduce').eq($index).addClass('ban')
+        }
+        if($(this).val()>=999){
+                $(this).val(999);
+                $('.things:visible .add').eq($index).addClass('ban')
+        }
+        $money.eq($index).text(($(this).val()*$money.eq($index).attr('unitprice')).toFixed(2));
+        localStorageHandle($(this),'plus',$(this).val())
+        $choose_amount.html( goodsAmount());
+        $choose_total.html(goodsAllPrice());  
+   })
     //计算商品总数
     function goodsAmount(){
         let $goodsnum=$('.things:visible').find('.numtog input');//input数量
@@ -178,15 +197,15 @@
         return price.toFixed(2);
     }
     //local操作
-    function localStorageHandle(ele,type){
+    function localStorageHandle(ele,type,num){
             
             var delid=ele.attr('id');
             var idlist=localStorage.getItem($.cookie('username')+'goodsid').split(',');
             var numlist=localStorage.getItem($.cookie('username')+'goodsnum').split(',');
             var delindex=idlist.indexOf(delid);
             
-            if(type=='delecheck'){
-
+            if(type=='plus'){
+                numlist[delindex]=num;
             }
             if(type=='dele'||type=='deleall'){
                 idlist.splice(delindex,1);
