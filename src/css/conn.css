@@ -73,6 +73,13 @@ input[type=text] {
   height: 36px;
   position: relative;
 }
+#search .searchshow {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 36px;
+}
 #search form {
   display: block;
   height: 36px;

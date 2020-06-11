@@ -1,5 +1,5 @@
 //导入头部
-!function(){
+!function($){
     $('#head').load("./connhead.html",function(){
         $('.back-home').css({display:'none'})
     })
@@ -15,9 +15,7 @@
         $('.all-list .name span').css({
             color:'#fff',
         });
-        const $searchbtn=$('.search-bar input[type="submit"]');
-        const $input=$('.search-bar input[type="text"]');
-        search($input,$searchbtn);
+        
     });
     $('#toolbar').load('./toolbar.html',function(){
          //判断用户是否登录
@@ -25,11 +23,11 @@
             $('.info .name').html($.cookie('username'));
         }
     });
-}();
+}(jQuery);
 
 
 //live效果
-!function(){
+!function($){
     const $liveimg=$('.firlive .live-special img');
     function move(){
         $liveimg.animate({
@@ -51,11 +49,63 @@
     setInterval(function(){
         move();
    },11000)
-}()
+}(jQuery)
 
+
+//轮播图
+!function($){
+    const $prev=$('.left .prev');
+    const $next=$('.left .next');
+    const $imglist=$('.left ul li');
+    const $btnlist=$('.left  ol li');
+    const $wrap=$('.left ');
+    let timer=null;
+    let index=0;
+    auto();
+    $wrap.hover(function(){
+        clearInterval(timer);
+    },function(){
+        auto();
+    })
+    $next.on('click',function(){
+        index++;
+        slide();
+    })
+    $prev.on('click',function(){
+        index--;
+        slide();
+    })
+    $btnlist.on('click',function(){
+        index=$(this).index();
+        $(this).addClass('focus').siblings().removeClass('focus');
+        slide();
+    })
+    function auto(){
+        timer=setInterval(function(){
+            index++;
+            slide();
+        },3000)
+    }
+    function slide(){
+        if(index>$imglist.length-1){
+            index=0;
+        }
+        if(index<0){
+            index=$imglist.length-1;
+        }
+        $imglist.eq(index).css({
+            opacity:1,
+            transition:'0.5s'
+        }).siblings().css({
+            opacity:0,
+            transition:'0.5s'
+        })
+        $btnlist.eq(index).addClass('focus').siblings().removeClass('focus');
+    }
+}(jQuery)
 
 //秒杀专区
-!function(){
+!function($){
     //渲染秒杀商品
     const $skillshow=$('#seckill ul');
     
@@ -82,8 +132,8 @@
     
     
     //左右按钮事件
-    const $prev=$('.prev');
-    const $next=$('.next');
+    const $prev=$('.kill-content .prev');
+    const $next=$('.kill-content .next');
     var block=true;
     $prev.on('click',function(){
         if(block){
@@ -177,7 +227,7 @@
         }
         
     },1000)
-}()
+}(jQuery)
 
 
 //猜你喜欢
@@ -214,14 +264,7 @@
 }(jQuery)
 
 
-//搜索
-function search($input,$btn){
-    if($input!==''){
-        $btn.on('click',function(){
-            $input.val();
-        })
-    }
-    
-}
+// //搜索
+
 
 

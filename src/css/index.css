@@ -1,12 +1,12 @@
 @charset "UTF-8";
-#related .relateditem ul, #otherGoods .con, #otherGoods .container, #foods .food-wrap, #foods .container, #seckill .kill-content .list ul, .wrap {
+#related .relateditem ul, #otherGoods .con, #otherGoods .container, #foods .food-wrap, #foods .container, #seckill .kill-content .list ul, .wrap, #banner .container {
   *zoom: 1;
 }
-#related .relateditem ul:before, #otherGoods .con:before, #otherGoods .container:before, #foods .food-wrap:before, #foods .container:before, #seckill .kill-content .list ul:before, .wrap:before, #related .relateditem ul:after, #otherGoods .con:after, #otherGoods .container:after, #foods .food-wrap:after, #foods .container:after, #seckill .kill-content .list ul:after, .wrap:after {
+#related .relateditem ul:before, #otherGoods .con:before, #otherGoods .container:before, #foods .food-wrap:before, #foods .container:before, #seckill .kill-content .list ul:before, .wrap:before, #banner .container:before, #related .relateditem ul:after, #otherGoods .con:after, #otherGoods .container:after, #foods .food-wrap:after, #foods .container:after, #seckill .kill-content .list ul:after, .wrap:after, #banner .container:after {
   content: " ";
   display: table;
 }
-#related .relateditem ul:after, #otherGoods .con:after, #otherGoods .container:after, #foods .food-wrap:after, #foods .container:after, #seckill .kill-content .list ul:after, .wrap:after {
+#related .relateditem ul:after, #otherGoods .con:after, #otherGoods .container:after, #foods .food-wrap:after, #foods .container:after, #seckill .kill-content .list ul:after, .wrap:after, #banner .container:after {
   clear: both;
 }
 
@@ -44,6 +44,9 @@ input[type=text] {
 #banner {
   width: 100%;
   height: 479px;
+  background-color: #F5F5F5;
+}
+#banner .container {
   background-color: #fff;
 }
 #banner .top-live {
@@ -55,6 +58,7 @@ input[type=text] {
   width: 848px;
   height: 79px;
   float: left;
+  position: relative;
 }
 #banner .top-live .firlive, #banner .top-live .seclive {
   border: 1px solid #e4e4e4;
@@ -164,7 +168,7 @@ input[type=text] {
 
 .wrap {
   width: 100%;
-  background-color: #c5000c;
+  background-color: #F5F5F5;
 }
 .wrap .left {
   width: 845px;
@@ -172,6 +176,70 @@ input[type=text] {
   height: 400px;
   float: left;
   background-color: blue;
+  position: relative;
+}
+.wrap .left div {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  width: 28px;
+  height: 62px;
+  line-height: 62px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  font-weight: 400;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 5;
+  font-family: simsun;
+}
+.wrap .left div:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrap .left .next {
+  right: 0;
+}
+.wrap .left ul {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.wrap .left ul li {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.wrap .left ul .active {
+  opacity: 1;
+}
+.wrap .left ul img {
+  width: 845px;
+  height: 400px;
+}
+.wrap .left ol {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+.wrap .left ol .focus {
+  width: 9px;
+  height: 9px;
+  top: 2px;
+  left: 0;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+}
+.wrap .left ol li {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 15, 15, 0.05);
+  background: rgba(255, 255, 255, 0.7);
 }
 .wrap .right {
   float: right;

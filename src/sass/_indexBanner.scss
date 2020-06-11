@@ -2,7 +2,11 @@
 #banner{
     width: 100%;
     height: 479px;
-    background-color: #fff;
+    background-color: #F5F5F5;
+    .container{
+        @extend %clearfix;
+        background-color: #fff;
+    }
     .top-live{
         height: 79px;
         width: 1033px;
@@ -12,6 +16,8 @@
             width: 848px;
             height: 79px;
             float: left;
+            position: relative;
+            
         }
         .firlive,.seclive{
             border: 1px solid #e4e4e4;
@@ -128,7 +134,7 @@
 //轮播图
 .wrap{
     width: 100%;
-    background-color: #c5000c;
+    background-color: #F5F5F5;
     @extend %clearfix;
 
     .left{
@@ -137,6 +143,71 @@
         height: 400px;
         float: left;
         background-color: blue;
+        position: relative;
+        div{
+            &:hover{
+                background: rgba(0, 0, 0, 0.5);
+            }
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            width: 28px;
+            height: 62px;
+            line-height: 62px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 22px;
+            font-weight: 400;
+            transform: translateY(-50%);
+            color: #fff;
+            z-index: 5;
+            font-family: simsun;
+        }
+        .next{
+            right: 0;
+        }
+        ul{
+            width: 100%;
+            height: 400px;
+            position: relative;
+            li{
+                opacity: 0;
+                position:absolute;
+                left: 0;
+                top:0
+            }
+            .active{
+                opacity: 1;
+              
+            }
+            img{
+                width: 845px;
+                height: 400px;
+            }
+        }
+        ol{
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            .focus{
+                width: 9px;
+                height: 9px;
+                top: 2px;
+                left: 0;
+                border: 3px solid rgba(0,0,0,.1);
+            }
+            li{
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin-right: 4px;
+                border-radius: 50%;
+                border: 1px solid rgba(46, 15, 15, 0.05);
+                background: rgba(255,255,255,.7);
+            }
+        }
     }
     .right{
         float: right;
