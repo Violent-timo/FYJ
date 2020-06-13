@@ -1,0 +1,14 @@
+<link rel=stylesheet href=./css/reset.css><link rel=stylesheet href=./css/header.css><header><div class=container><div class=left><a href=index.html class=back-home><span></span>返回商城首页</a> <a href=javascript:;><span></span>浙江省<i></i></a></div><div class=right><dl class=login><dt><div class=unuse><a href=login.html>您好, &nbsp;请登录</a> <a href=register.html>免费注册</a></div><div class=use><a href=javascript:; class=exit>退出登录</a> <span class=username></span> <sub title=会员等级>暂无会员等级</sub></div></dt></dl><dl class=myorder><dt class=title><a href=javascript:;>我的订单</a> <span class=arrow></span></dt><dd class=con><ul><li><a href=javasctipt:;>待支付</a></li><li><a href=javasctipt:;>待确认</a></li><li><a href=javasctipt:;>待评价</a></li></ul></dd></dl><dl class=mymall><dt class=title><a href=javascript:;>我的商城</a> <span class=arrow></span></dt><dd class=con><ul><li><a href=javascript:;>站内消息</a></li><li><a href=javascript:;>资讯回复</a></li><li><a href=javascript:;>我的收藏</a></li><li><a href=javascript:;>我的足迹</a></li><li><a href=javascript:;>我的积分</a></li><li><a href=javascript:;>我的优惠券</a></li></ul></dd></dl><dl class=call-center><dt class=title><a href=javascript:;>客户服务</a> <span class=arrow></span></dt><dd class=con><ul><li><a href=javascript:;>购物指南</a></li><li><a href=javascript:;>售后服务</a></li><li><a href=javascript:;>商家服务</a></li></ul></dd></dl><dl class=mobile-mall><dt class=title><span class=icon></span> 手机商城 <span class=arrow></span></dt><dd class=con><span class=QRcode><img src=./imgs/url.gif><p>扫描二维码<br>更多优惠下载小小品APP</p></span></dd></dl></div></div></header><script src=https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js></script><script src=https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js></script><script>
+         !function($){
+            $('.exit').on('click',function(){
+             console.log(66)
+            $.removeCookie('username',{path:'/'});
+            location.href='login.html';
+            })
+            if($.cookie('username')){
+                $('.unuse').css({display:'none'});
+                $('.use').css({display:'block'});
+                $('.use span').html($.cookie('username'));  
+            }
+         }(jQuery)
+    </script>
