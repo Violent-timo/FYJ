@@ -151,6 +151,12 @@
         
     })
    //商品input输入数量
+   $buywrap.on('input',".numtog input",function(){
+       
+       if(!(/^\d+$/.test($(this).val()))){
+        $(this).val('');
+       }
+   })
    $buywrap.on('blur',".numtog input",function(){
        
         let $money=$('.things:visible').find('.money span');
@@ -158,6 +164,8 @@
         if($(this).val()<=1){
             $(this).val(1);
             $('.things:visible .reduce').eq($index).addClass('ban')
+        }else{
+            $('.things:visible .reduce').eq($index).removeClass('ban')
         }
         if($(this).val()>=999){
                 $(this).val(999);
