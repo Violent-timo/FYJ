@@ -396,4 +396,11 @@ body {
   background-position: 0 -500px;
 }
 
+footer {
+  width: 100%;
+}
+footer img {
+  width: 100%;
+}
+
 /*# sourceMappingURL=list.css.map */

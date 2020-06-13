@@ -337,6 +337,15 @@ header .login a {
   color: #DD5A43 !important;
   font-weight: bold;
 }
+.secondForm .setpassword .grade {
+  width: 30px;
+  height: 52px;
+  line-height: 52px;
+  display: block;
+  position: absolute;
+  right: -45px;
+  font-size: 14px;
+}
 .secondForm .submitBtn {
   margin-top: 15px;
 }

@@ -1,8 +1,8 @@
 //加载头部
-!function(){
+!function($){
     $('#header').load("./connhead.html");
     //,function(){$('.left').children().not('.back-home').css({display:'none'});}
-}()
+}(jQuery)
 
 //加载购物车
 !function($){

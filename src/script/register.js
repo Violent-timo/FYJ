@@ -52,7 +52,7 @@
                     secondActive();
                     $agreeerr.css({display:'none'});
                     $.get('http://10.31.162.14/Zshoppro/php/register.php','tel='+telnum,function(data){
-                        console.log(data);
+                        // console.log(data);
                     })
                     tellock=false;
                 }else{
@@ -71,7 +71,7 @@
 
 
     let timer=null;//定时器
-    let time=5;//倒计时60s后可以重新发送
+    let time=60;//倒计时60s后可以重新发送
     const $count_down=$('.count-down strong');//倒计时容器
     const $getagain=$('.getagain');//重新获取验证码按钮
 
@@ -79,7 +79,8 @@
     const $encodeerr=$('.encode .error');
 
     const $password=$('.setpassword input');
-    const $passworderr=$('setpassword .error')
+    const $passworderr=$('.setpassword .error')
+    console.log($passworderr)
     const $repassword=$('.repassword input');
     const $repassworderr=$('.repassword .error');
 
@@ -137,31 +138,114 @@
     })
 
     //密码和repassword
-    let pasblock=false;
+
+    let repasblock=false;
     $repassword.on('blur',function(){
         if($repassword.val()===$password.val()){
            $repassworderr.css({display:'none'});
-           pasblock=true;
+           repasblock=true;
         }else{
-            pasblock=false;
+            repasblock=false;
             $repassworderr.css({display:'block'}).html('两次密码不一致');
         }
     })
+    //判断密码强度
+    const $grade=$('.grade');
+    let pasblock=false;
+    let regnum = /\d+/;
+    let regupper = /[A-Z]+/;
+    let reglower = /[a-z]+/;
+    let regother = /[\W\_]+/;
+    $password.on('input',function(){
+        let $pass=$(this).val()
+        let gradecount=0;
+        $passworderr.css({display:'none'});
+        if($pass.length>=6){
+            if (regnum.test($pass)) {
+                gradecount++;
+            }
+    
+            if (regupper.test($pass)) {
+                gradecount++;
+            }
+    
+            if (reglower.test($pass)) {
+                gradecount++;
+            }
+    
+            if (regother.test($pass)) {
+                gradecount++;
+            }
+            switch (gradecount) {
+                case 1:
+                    $grade.html('弱').css({
+                        color: 'red'
+                    });
+                    break
+    
+                case 2:
+                case 3:
+                    $grade.html('中').css({
+                        color: 'yellow'
+                    });
+                    break
+                    
+                case 4:
+                    $grade.html('强').css({
+                        color: 'green'
+                    });
+                    break
+                    
+            }
+            if(gradecount>=2){
+                pasblock=true
+            }else{
+                pasblock=false
+            }
+        }else{
+            $grade.html('');
+            pasblock=false;
+        }
 
+    })
+    $password.on('blur',function(){
+        if($(this).val().length<6){
+            $passworderr.css({display:'block'}).html('密码长度过短');
+            pasblock=false;
+        }else if($(this).val().length>20){
+            $passworderr.css({display:'block'}).html('密码长度过长');
+            pasblock=false;
+        }else{
+            pasblock=true;
+        }
+
+    })
     //注册按钮
     $subbtn.on('click',function(){
-        console.log(codelock,pasblock)
-        if(codelock&&pasblock){
-            console.log(222)
+        if(!repasblock){
+            $repassworderr.css({display:'block'}).html('密码错误');
+        }
+        if(!codelock){
+            $encodeerr.css({display:'block'}).html('验证码错误');
+        }
+        if(!pasblock){
+            $passworderr.css({display:'block'}).html('密码错误');
+        }
+        console.log(codelock,repasblock)
+        if(codelock&&repasblock&&pasblock){
             $.post('http://10.31.162.14/Zshoppro/php/register.php',
             {'password':$password.val(),
               'tel':$getmobilemsg.attr('tel'),  
             });
-            pasblock=false;
+            
+            repasblock=false;
             codelock=false;
+            pasblock=false;
             alert('注册成功');
             location.href='login.html';
         }
         return false;
     })
+
+    
 }()

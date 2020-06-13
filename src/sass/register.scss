@@ -358,6 +358,18 @@ header{
         }
     }
   
+    .setpassword{
+        .grade{
+            width: 30px;
+            height: 52px;
+            line-height: 52px;
+            display: block;
+            position: absolute;
+            right: -45px;
+            font-size: 14px;
+            
+        }
+    }
     //提交按钮
     .submitBtn{
         margin-top: 15px;
