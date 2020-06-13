@@ -121,7 +121,11 @@
         let $money=$('.things:visible').find('.money span');
         if(Number($shownum.eq($index).val())>1){
             localStorageHandle($(this),'-');
+            
             $shownum.eq($index).val($shownum.eq($index).val()-1);
+            if(Number($shownum.eq($index).val())<=1){
+                $(this).addClass('ban');
+            }
             $('.things:visible .numtog .add').eq($index).removeClass('ban')
         }else{
             $(this).addClass('ban')
@@ -138,8 +142,20 @@
         let $shownum=$('.things:visible').find('.numtog input');
         let $index=$('.things:visible').find('.numtog .add').index($(this));
         let $money=$('.things:visible').find('.money span');
-        localStorageHandle($(this),'+');
-        $shownum.eq($index).val(Number($shownum.eq($index).val())+1);
+        const $count= $('.things:visible').find('.numtog input').eq($index);
+        
+        
+        if($count.val()<999){
+            localStorageHandle($(this),'+');
+            $shownum.eq($index).val(Number($shownum.eq($index).val())+1);
+            if($count.val()>=999){
+                $('.things:visible .add').eq($index).addClass('ban')
+            }
+        }else{
+            $count.val(999);
+            $('.things:visible .add').eq($index).addClass('ban')
+        }
+       
         if(Number($shownum.eq($index).val())>1){
             $(this).parent().find('.reduce').removeClass('ban')
         }
@@ -154,7 +170,7 @@
    $buywrap.on('input',".numtog input",function(){
        
        if(!(/^\d+$/.test($(this).val()))){
-        $(this).val('');
+            $(this).val('');
        }
    })
    $buywrap.on('blur',".numtog input",function(){
